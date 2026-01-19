@@ -1,0 +1,1742 @@
+GRPO EVALUATION
+Dataset: matafix/english-sentences-with-sentinel split=train samples=1000
+Base model: meta-llama/Meta-Llama-3.1-8B-Instruct
+Finetuned: grpo_harder_translate_lora/checkpoint-1100
+Constraints: len_ratio[0.5,2.0], sim>=0.78, acc>=0.5, single_sentence=True
+Validity rates: base=0.182, finetuned=0.190
+Comparison set: INTERSECTION(base & finetuned) count=156
+
+
+============================================================
+VALID SET: INTERSECTION(base & finetuned) (156/1000)
+============================================================
+Mean Sentinel (Original baseline): 0.2078
+Mean Sentinel (Base rewrites):     0.1248
+Mean Sentinel (Finetuned rewrites):0.1180
+------------------------------------------------------------
+Sentinel Difference (Original - Finetuned): 0.0897
+Sentinel Difference (Baseline - Finetuned): 0.0068
+------------------------------------------------------------
+Validity rate (Base):             0.182
+Validity rate (Finetuned):        0.190
+Mean pairwise cosine sim (Originals):  0.0390
+Mean pairwise cosine sim (Base):       0.0664
+Mean pairwise cosine sim (Finetuned):  0.0666
+============================================================
+Note: Sentinel higher = easier to translate. Lower rewrite score => harder.
+SAMPLE 1 (idx=9)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3465
+Standing firmly against the creation of new dividing lines in Europe, Ukraine is convinced that with enough political will, it is possible to find appropriate, mutually advantageous modalities of European integration, including different levels of integration for new European democracies into such basic structures as EU, WEU, and NATO.
+
+[BASE]  Sentinel=0.1721  sim=0.8092 acc=0.7474 reason=valid
+Ukraine is resolute in its stance against the proliferation of artificial fault lines in the European landscape, firmly convinced that with a critical mass of political momentum, it is entirely feasible to identify and implement mutually beneficial modalities of European integration that cater to the diverse needs of emerging democracies, encompassing a range of integration levels that accommodate the varying degrees of alignment with foundational institutions such as the EU, the Western European Union, and NATO, thereby fostering a more inclusive and cohesive European entity.
+
+[FINETUNED] Sentinel=0.1721  sim=0.8092 acc=0.7474 reason=valid
+Ukraine is resolute in its stance against the proliferation of artificial fault lines in the European landscape, firmly convinced that with a critical mass of political momentum, it is entirely feasible to identify and implement mutually beneficial modalities of European integration that cater to the diverse needs of emerging democracies, encompassing a range of integration levels that accommodate the varying degrees of alignment with foundational institutions such as the EU, the Western European Union, and NATO, thereby fostering a more inclusive and cohesive European entity.
+
+SAMPLE 2 (idx=11)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2699
+The advantages of such novel changes are flexibility, plasticity, more rapidly developing population diversity and greater opportunities--but the disadvantages are that genomes cannot recover what has been irrevocably lost, and cultural advantages can be sensitive to the whims of history and fate .
+
+[BASE]  Sentinel=0.2388  sim=0.7819 acc=0.9156 reason=valid
+The benefits of such paradigmatic shifts are multifaceted, encompassing flexibility, the capacity for plasticity, accelerated population diversification, and a plethora of emerging opportunities; however, the drawbacks are that genomes are incapable of recuperating from irreparable losses, and the cultural advantages that accrue are notoriously susceptible to the vicissitudes of historical contingency and the unpredictable trajectory of human destiny.
+
+[FINETUNED] Sentinel=0.2388  sim=0.7819 acc=0.9156 reason=valid
+The benefits of such paradigmatic shifts are multifaceted, encompassing flexibility, the capacity for plasticity, accelerated population diversification, and a plethora of emerging opportunities; however, the drawbacks are that genomes are incapable of recuperating from irreparable losses, and the cultural advantages that accrue are notoriously susceptible to the vicissitudes of historical contingency and the unpredictable trajectory of human destiny.
+
+SAMPLE 3 (idx=17)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3117
+Read on to learn what causes acne and why it tends to occur on specific areas of the face and body.
+
+[BASE]  Sentinel=0.1848  sim=0.8264 acc=0.9723 reason=valid
+To get the lowdown on what triggers acne and why it has a propensity to manifest in particular regions of the face and body, keep reading.
+
+[FINETUNED] Sentinel=0.0715  sim=0.7950 acc=0.9675 reason=valid
+To get the lowdown on what triggers acne and why it has a propensity to manifest in particular hotspots on the face and body, keep reading.
+
+SAMPLE 4 (idx=29)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1068
+To a lesser extent we are also affected by coal plant emissions, which are even blown across from continental Europe as well as coming from our own remaining plants.
+
+[BASE]  Sentinel=0.2979  sim=0.8481 acc=0.9422 reason=valid
+To a certain degree, we're also somewhat impacted by the emissions from coal-fired power plants, which are not only wafting over from the European mainland but also emanating from our domestic facilities that are still operational, albeit to a significantly lesser extent than in the past.
+
+[FINETUNED] Sentinel=0.3076  sim=0.8469 acc=0.9414 reason=valid
+To a certain degree, we're also somewhat impacted by the emissions from coal-fired power plants, which are not only wafting over from the European mainland but also emanating from our own domestic facilities that are still operational, albeit to a significantly lesser extent than in the past.
+
+SAMPLE 5 (idx=32)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.4374
+In the days following Sept. 18, 2001, at least 10 journalists from the Eritrean private press and 11 former members of the Eritrean government were rounded up and detained.
+
+[BASE]  Sentinel=0.2690  sim=0.8204 acc=0.9458 reason=valid
+Following the tumultuous aftermath of September 18, 2001, a considerable number of journalists from the Eritrean private press and at least a dozen erstwhile government officials found themselves rounded up and placed under house arrest, or in some cases, detained in a state of limbo, pending further investigation.
+
+[FINETUNED] Sentinel=0.3166  sim=0.8077 acc=0.9388 reason=valid
+Following the tumultuous period that unfolded in the aftermath of September 18, 2001, a considerable number of journalists affiliated with the Eritrean private media sphere and at least a dozen erstwhile high-ranking officials from the Eritrean government were apprehended and placed under house arrest, their whereabouts remaining shrouded in secrecy.
+
+SAMPLE 6 (idx=41)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3503
+What we now call the Empowerment Model is very helpful because it allows health care professionals to avoid getting frustrated when patients and family members do not make the same choices as we would.
+
+[BASE]  Sentinel=0.1256  sim=0.8460 acc=0.9702 reason=valid
+The Empowerment Model, which has become the standard paradigm in our field, is a game-changer because it enables healthcare practitioners to sidestep feelings of exasperation when patients and their loved ones fail to align their decisions with our own expectations, thereby sidestepping the potential for intergenerational conflict and facilitating a more collaborative approach to care.
+
+[FINETUNED] Sentinel=0.1256  sim=0.8460 acc=0.9702 reason=valid
+The Empowerment Model, which has become the standard paradigm in our field, is a game-changer because it enables healthcare practitioners to sidestep feelings of exasperation when patients and their loved ones fail to align their decisions with our own expectations, thereby sidestepping the potential for intergenerational conflict and facilitating a more collaborative approach to care.
+
+SAMPLE 7 (idx=47)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2323
+In fact, by all accounts, MTR has been a boon for them, allowing the removal of two-and-a-half times more coal per hour than traditional underground mining.
+
+[BASE]  Sentinel=0.0455  sim=0.8512 acc=0.9126 reason=valid
+In point of fact, by all indications, MTR has been a game-changer for them, enabling the extraction of approximately two-and-a-half times more coal per hour than the conventional underground mining method, which has been a real shot in the arm for their operations.
+
+[FINETUNED] Sentinel=0.0455  sim=0.8512 acc=0.9126 reason=valid
+In point of fact, by all indications, MTR has been a game-changer for them, enabling the extraction of approximately two-and-a-half times more coal per hour than the conventional underground mining method, which has been a real shot in the arm for their operations.
+
+SAMPLE 8 (idx=50)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3239
+He says enabling DNSSEC is the first step to supporting a new set of security services and extensions such as DANE, that rely on the ability to securely authenticate and verify DNS data.
+
+[BASE]  Sentinel=-0.0018  sim=0.9162 acc=0.9459 reason=valid
+He claims that initiating DNSSEC is the inaugural move towards facilitating a suite of cutting-edge security services and add-ons, including DANE, which hinges on the capacity to authenticate and validate DNS data in a manner that's rock-solid and airtight.
+
+[FINETUNED] Sentinel=-0.0018  sim=0.9162 acc=0.9459 reason=valid
+He claims that initiating DNSSEC is the inaugural move towards facilitating a suite of cutting-edge security services and add-ons, including DANE, which hinges on the capacity to authenticate and validate DNS data in a manner that's rock-solid and airtight.
+
+SAMPLE 9 (idx=54)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.0415
+Technical Area 49, where the fire entered Los Alamos National Laboratory property, is used by the lab's Hazardous Devices Team as a training area and as an isolated location for blowing up suspect packages.
+
+[BASE]  Sentinel=-0.0840  sim=0.8633 acc=0.9183 reason=valid
+The Hazardous Devices Team at Los Alamos National Laboratory has designated Technical Area 49, the site where a blaze initially breached the lab's perimeter, as a bespoke training ground and a secure, off-the-beaten-path facility for conducting controlled detonations of suspicious parcels and packages that require a high level of isolation to prevent any potential collateral damage or contamination.
+
+[FINETUNED] Sentinel=-0.0840  sim=0.8633 acc=0.9183 reason=valid
+The Hazardous Devices Team at Los Alamos National Laboratory has designated Technical Area 49, the site where a blaze initially breached the lab's perimeter, as a bespoke training ground and a secure, off-the-beaten-path facility for conducting controlled detonations of suspicious parcels and packages that require a high level of isolation to prevent any potential collateral damage or contamination.
+
+SAMPLE 10 (idx=64)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.4019
+Between 1941 and 1943, the main shooting site for the Jews from Plyskiv and the surrounding area was the former livestock cemetery outside of the village.
+
+[BASE]  Sentinel=0.2545  sim=0.8378 acc=0.7731 reason=valid
+Between the years 1941 and 1943, the primary killing grounds for the Jewish population from Plyskiv and the adjacent region was situated in a erstwhile livestock burial ground situated on the outskirts of the village, a locale that had previously been utilized for the interment of deceased livestock.
+
+[FINETUNED] Sentinel=0.2545  sim=0.8378 acc=0.7731 reason=valid
+Between the years 1941 and 1943, the primary killing grounds for the Jewish population from Plyskiv and the adjacent region was situated in a erstwhile livestock burial ground situated on the outskirts of the village, a locale that had previously been utilized for the interment of deceased livestock.
+
+SAMPLE 11 (idx=81)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.0958
+If the government decides that the information provided would be useful to it in vindicating society's interests, it may share information about other qui tam cases and create a group of counsel to do the work that is necessary to prosecute the case.
+
+[BASE]  Sentinel=-0.0167  sim=0.8364 acc=0.9577 reason=valid
+If the government deems the information furnished to be sufficiently pertinent to its efforts in upholding the public good, it may choose to disseminate details about other qui tam cases and establish a panel of legal experts to undertake the requisite tasks involved in mounting a prosecution that would be in the best interests of society.
+
+[FINETUNED] Sentinel=-0.0167  sim=0.8364 acc=0.9577 reason=valid
+If the government deems the information furnished to be sufficiently pertinent to its efforts in upholding the public good, it may choose to disseminate details about other qui tam cases and establish a panel of legal experts to undertake the requisite tasks involved in mounting a prosecution that would be in the best interests of society.
+
+SAMPLE 12 (idx=87)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1170
+There is no question about it that poverty is more pervasive in Western Province than prosperity by whatever standards, yardstick the two are measured.
+
+[BASE]  Sentinel=0.0866  sim=0.9370 acc=0.8143 reason=valid
+It's a no-brainer that poverty is more deeply ingrained in Western Province than prosperity, regardless of which benchmark or yardstick one uses to gauge the two, by any stretch of the imagination.
+
+[FINETUNED] Sentinel=0.0866  sim=0.9370 acc=0.8143 reason=valid
+It's a no-brainer that poverty is more deeply ingrained in Western Province than prosperity, regardless of which benchmark or yardstick one uses to gauge the two, by any stretch of the imagination.
+
+SAMPLE 13 (idx=88)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.4040
+Several recent studies of Aso volcano have investigated the crater lake, one of the surface manifestations of the hydrothermal system.
+
+[BASE]  Sentinel=0.2284  sim=0.9544 acc=0.9214 reason=valid
+Several recent investigations into the Aso volcano's crater lake, a paradigmatic exemplar of the hydrothermal system's surface expressions, have been undertaken in recent times.
+
+[FINETUNED] Sentinel=0.2284  sim=0.9544 acc=0.9214 reason=valid
+Several recent investigations into the Aso volcano's crater lake, a paradigmatic exemplar of the hydrothermal system's surface expressions, have been undertaken in recent times.
+
+SAMPLE 14 (idx=107)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.0844
+According to Gupta, the Son Bhandar Caves could be such an intermediate step, although relatively unique, and subject to questioning its chronology, since it is generally dated to the 2nd-4th centuries of our era .
+
+[BASE]  Sentinel=0.0699  sim=0.8690 acc=0.8613 reason=valid
+In the opinion of Gupta, the Son Bhandar Caves might serve as a pivotal juncture, albeit a somewhat singular instance, which, incidentally, prompts a reevaluation of its temporal framework, given that it is typically bracketed within the 2nd-4th centuries of the Common Era, a period marked by significant cultural and artistic developments in the Indian subcontinent.
+
+[FINETUNED] Sentinel=0.0371  sim=0.8569 acc=0.8665 reason=valid
+In the opinion of Gupta, the Son Bhandar Caves might serve as a pivotal juncture, albeit a singular instance, which, incidentally, prompts a reevaluation of its temporal framework, given that it is typically bracketed within the 2nd-4th centuries of the Common Era, a timeframe that warrants a nuanced consideration of its place within the broader historical narrative.
+
+SAMPLE 15 (idx=108)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.0302
+In 1830 the road was re¬routed over the present bridge at Saltersbrook and the sharp left hand bend was put in at Fulshaw and then the road went via Millhouse Green and Thurlstone to Penistone.
+
+[BASE]  Sentinel=-0.0141  sim=0.8984 acc=0.9701 reason=valid
+In 1830, a significant alteration was made to the original route, which was subsequently redirected over the existing bridge spanning Saltersbrook, thereby necessitating the introduction of a sharp left-hand turn at Fulshaw, after which the road continued on a circuitous path via the hamlet of Millhouse Green and the village of Thurlstone, ultimately terminating at the market town of Penistone.
+
+[FINETUNED] Sentinel=-0.0141  sim=0.8984 acc=0.9701 reason=valid
+In 1830, a significant alteration was made to the original route, which was subsequently redirected over the existing bridge spanning Saltersbrook, thereby necessitating the introduction of a sharp left-hand turn at Fulshaw, after which the road continued on a circuitous path via the hamlet of Millhouse Green and the village of Thurlstone, ultimately terminating at the market town of Penistone.
+
+SAMPLE 16 (idx=117)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.4216
+Renowned as a prolific author, speaker and advisor on international relations and related topics, Khanna specialises in explaining geopolitical shifts, but he also explores the increasing influence of technology on the organisation of society, including the development of 'smart cities'.
+
+[BASE]  Sentinel=0.1347  sim=0.8945 acc=0.8918 reason=valid
+Renowned for his far-reaching expertise as a high-profile author, keynote speaker, and strategic advisor on the intricacies of international relations and associated domains, Khanna has carved out a niche for himself by elucidating the seismic shifts in the global landscape, but he also delves into the burgeoning impact of technological advancements on the reconfiguration of societal structures, encompassing the emergence of'smart cities' as a paradigmatic exemplar of this phenomenon.
+
+[FINETUNED] Sentinel=0.1347  sim=0.8945 acc=0.8918 reason=valid
+Renowned for his far-reaching expertise as a high-profile author, keynote speaker, and strategic advisor on the intricacies of international relations and associated domains, Khanna has carved out a niche for himself by elucidating the seismic shifts in the global landscape, but he also delves into the burgeoning impact of technological advancements on the reconfiguration of societal structures, encompassing the emergence of'smart cities' as a paradigmatic exemplar of this phenomenon.
+
+SAMPLE 17 (idx=126)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1999
+If so, you should be aware that asbestos was present at that facility for some time, putting employees and anyone else who frequently visited the location in Haverhill at an increased risk for health concerns.
+
+[BASE]  Sentinel=-0.0620  sim=0.9082 acc=0.8699 reason=valid
+If that's the case, it's worth noting that asbestos had been lingering at that particular facility for a considerable period, thereby placing employees and anyone else who regularly dropped by the location in Haverhill in a higher-risk category for potential health-related issues, which could have been mitigated with proper precautions and protocols in place from the get-go.
+
+[FINETUNED] Sentinel=-0.0620  sim=0.9082 acc=0.8699 reason=valid
+If that's the case, it's worth noting that asbestos had been lingering at that particular facility for a considerable period, thereby placing employees and anyone else who regularly dropped by the location in Haverhill in a higher-risk category for potential health-related issues, which could have been mitigated with proper precautions and protocols in place from the get-go.
+
+SAMPLE 18 (idx=129)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.0519
+It is worth noting that the math lab tutors are limited to helping with lower division math classes only, though upper division math students are welcome to use the space for personal study or group work.
+
+[BASE]  Sentinel=0.1129  sim=0.8705 acc=0.9748 reason=valid
+It's worth keeping in mind that the math lab tutors are strictly confined to providing assistance with lower-division math courses, whereas upper-division math students are more than welcome to utilize the space for independent study or collaborative work, but it's essential to note that the tutors' primary focus remains on supporting students enrolled in lower-division math classes, which is the core purpose of the facility, after all.
+
+[FINETUNED] Sentinel=-0.0023  sim=0.8923 acc=0.9745 reason=valid
+It's worth keeping in mind that the math lab tutors are strictly confined to providing assistance with lower-division math courses, whereas upper-division math students are more than welcome to utilize the space for independent study or collaborative work, but they're not exactly entitled to the same level of support as their lower-division counterparts, so it's a bit of a mixed bag, if you will.
+
+SAMPLE 19 (idx=131)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2892
+The first release contains harmonized sociodemographic variables for all respondents from all ten component studies, including those related to marital status, race and ethnicity, education, income, migration, religion, and region of origin, among others.
+
+[BASE]  Sentinel=0.1562  sim=0.8133 acc=0.9428 reason=valid
+The inaugural dataset encompasses a comprehensive suite of harmonized sociodemographic variables that are uniformly applicable to all participants across the entire spectrum of the ten constituent studies, encompassing a broad range of factors such as marital status, racial and ethnic affiliations, educational attainment, socioeconomic standing, migratory patterns, religious affiliations, and geographical origins, among a multitude of other variables that are pertinent to the research.
+
+[FINETUNED] Sentinel=0.1562  sim=0.8133 acc=0.9428 reason=valid
+The inaugural dataset encompasses a comprehensive suite of harmonized sociodemographic variables that are uniformly applicable to all participants across the entire spectrum of the ten constituent studies, encompassing a broad range of factors such as marital status, racial and ethnic affiliations, educational attainment, socioeconomic standing, migratory patterns, religious affiliations, and geographical origins, among a multitude of other variables that are pertinent to the research.
+
+SAMPLE 20 (idx=134)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2591
+Because the Eco-Initiative is a multiyear program, we can develop a database of organisms that live in the Rhinebeck schools' lawns, playgrounds and athletic fields, and we can start to ask questions about enhancing biodiversity and supporting ecosystem function.
+
+[BASE]  Sentinel=0.1285  sim=0.9356 acc=0.9616 reason=valid
+Given the fact that the Eco-Initiative is a multiyear program with a broad scope, we can establish a comprehensive database of organisms that inhabit the Rhinebeck schools' grounds, encompassing lawns, playgrounds, and athletic fields, thereby enabling us to pose a range of questions about how to augment biodiversity and bolster ecosystem functionality, which is a crucial aspect of the program's overall mission to promote ecological sustainability and environmental stewardship in the local community.
+
+[FINETUNED] Sentinel=0.1525  sim=0.9360 acc=0.9584 reason=valid
+Given the fact that the Eco-Initiative is a multiyear program with a broad scope, we can establish a comprehensive database of organisms that inhabit the Rhinebeck schools' grounds, encompassing lawns, playgrounds, and athletic fields, thereby enabling us to pose pertinent questions about augmenting biodiversity and bolstering ecosystem functionality, which is a crucial aspect of the program's overall mission to promote ecological sustainability and environmental stewardship in the local community.
+
+SAMPLE 21 (idx=135)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1272
+Further considerations for thallium contamination (radioactive and non-radioactive) General therapy guidelines for thallium contamination should follow the radioactive decontamination procedures listed above for 137Cs, except that there is no need for radiation safety precautions when treating patients contaminated with non-radioactive thallium.
+
+[BASE]  Sentinel=0.0387  sim=0.9373 acc=0.9030 reason=valid
+In terms of further considerations for thallium contamination, which encompasses both radioactive and non-radioactive forms, it's essential to adhere to the general therapy guidelines outlined above for 137Cs, but with a crucial caveat: radiation safety protocols are entirely unnecessary when dealing with patients contaminated with non-radioactive thallium, a distinction that's often overlooked in the broader context of radioactive contamination treatment protocols.
+
+[FINETUNED] Sentinel=-0.0395  sim=0.9657 acc=0.8732 reason=valid
+In terms of further considerations for thallium contamination, which encompasses both radioactive and non-radioactive forms, it's essential to adhere to the general therapy guidelines outlined for radioactive decontamination procedures, specifically those related to 137Cs, with the caveat that radiation safety protocols are entirely unnecessary when dealing with patients contaminated with non-radioactive thallium, a distinction that's often overlooked in the broader context of thallium decontamination strategies.
+
+SAMPLE 22 (idx=137)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3957
+A new study was just done that examines the use of artificial sweeteners in pregnancy and the risk of obesity in child.
+
+[BASE]  Sentinel=0.2227  sim=0.8578 acc=0.9726 reason=valid
+A recent investigation into the burgeoning trend of artificially sweetened substances during gestation has shed new light on the complex interplay between maternal dietary choices and the propensity for childhood obesity, a pressing concern that has been gaining traction in the medical community.
+
+[FINETUNED] Sentinel=0.2227  sim=0.8578 acc=0.9726 reason=valid
+A recent investigation into the burgeoning trend of artificially sweetened substances during gestation has shed new light on the complex interplay between maternal dietary choices and the propensity for childhood obesity, a pressing concern that has been gaining traction in the medical community.
+
+SAMPLE 23 (idx=138)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.1316
+His Excellency commended the work at the 1860 Heritage Centre, the ACT Foundation founder, Mohanji and its president Devi Mohan on this initiative that creates a tangible difference to lives of the poor and disenfranchised people, saying how proud he was to see us make a global impact in eradicating poverty and restoring dignity for humanity.
+
+[BASE]  Sentinel=-0.1675  sim=0.8959 acc=0.7857 reason=valid
+His Excellency, in a keynote address at the 1860 Heritage Centre, lauded the ACT Foundation's trailblazing efforts, spearheaded by its visionary founder, Mohanji, and its president, Devi Mohan, for their groundbreaking initiative that's making a palpable, far-reaching impact on the lives of the underprivileged and marginalized communities, expressing his unbridled pride in witnessing the organisation's remarkable strides towards a poverty-free world and the restoration of dignity for the global community, which is a testament to the power of collective action and the unwavering commitment of its stakeholders to creating a better, more
+
+[FINETUNED] Sentinel=-0.1201  sim=0.8787 acc=0.8145 reason=valid
+His Excellency, in a ceremony at the 1860 Heritage Centre, lauded the ACT Foundation's trailblazing efforts, spearheaded by its visionary founder, Mohanji, and its president, Devi Mohan, for their groundbreaking initiative that's making a palpable, far-reaching impact on the lives of the underprivileged and marginalized communities, remarking that he was utterly proud to witness the organisation's remarkable strides in tackling poverty and restoring a sense of self-worth to humanity, which is a testament to the power of collective action and a shining example of what can be achieved when people come together to drive positive
+
+SAMPLE 24 (idx=145)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.0792
+Trudeau, in wanting to establish a village at Portage Des Sioux urged Jean Francois, who held the confidence of the French settlers on the American side of the river, to quietly use his influence to induce the french settlers to settle near the Spanish post, encouraging them by giving every facility necessary to form the village by the Spanish military post and assigning them land there.
+
+[BASE]  Sentinel=-0.0300  sim=0.9514 acc=0.9156 reason=valid
+Trudeau, in a bid to establish a village at Portage Des Sioux, endeavored to persuade Jean Francois, who enjoyed a considerable degree of credibility among the French settlers on the American side of the river, to exercise his considerable influence behind the scenes to nudge the French settlers in the direction of the Spanish post, thereby leveraging his position to facilitate their settlement by providing them with every conceivable amenity and logistical support necessary to establish the village in close proximity to the Spanish military outpost, and subsequently allocating them a tract of land in that vicinity.
+
+[FINETUNED] Sentinel=-0.0431  sim=0.9520 acc=0.8856 reason=valid
+Trudeau, in a bid to establish a village at Portage Des Sioux, endeavored to persuade Jean Francois, who enjoyed a considerable degree of credibility among the French settlers on the American side of the river, to exercise his considerable influence behind the scenes to nudge the French settlers in the direction of the Spanish post, thereby leveraging his position to facilitate their settlement by providing them with every conceivable amenity and logistical support necessary to establish the village in close proximity to the Spanish military outpost, and subsequently allocating them a tract of land in the vicinity.
+
+SAMPLE 25 (idx=157)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1900
+There are multiple vitamin formulas that help the body to digest the nutrition contained in the athlete's diet so that he or she maintains the proper hormone levels, healthy tissues and maintains the energy he or she needs to work out and compete.
+
+[BASE]  Sentinel=0.1053  sim=0.8453 acc=0.9712 reason=valid
+There are a plethora of vitamin formulations that facilitate the body's ability to metabolize the nutritional components of an athlete's diet, thereby enabling them to strike a delicate balance of hormones, maintain healthy tissue integrity, and sustain the requisite energy levels necessary to engage in rigorous physical activity and compete at an optimal level.
+
+[FINETUNED] Sentinel=0.1053  sim=0.8453 acc=0.9712 reason=valid
+There are a plethora of vitamin formulations that facilitate the body's ability to metabolize the nutritional components of an athlete's diet, thereby enabling them to strike a delicate balance of hormones, maintain healthy tissue integrity, and sustain the requisite energy levels necessary to engage in rigorous physical activity and compete at an optimal level.
+
+SAMPLE 26 (idx=161)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1438
+This phrase has been used by the Court to outlaw Ten Commandments displays in public buildings, prayer and Bible reading in schools, clergy and even student invocations at school events, and other public acknowledgements of God.
+
+[BASE]  Sentinel=-0.0726  sim=0.8557 acc=0.8156 reason=valid
+The Court has invoked this phrase to strike down displays of the Ten Commandments in public edifices, suppress prayer and scripture recitation in educational institutions, muzzle clergy and even student invocation participation at school functions, and other public expressions of theistic reverence.
+
+[FINETUNED] Sentinel=-0.0663  sim=0.8607 acc=0.8242 reason=valid
+The Court has invoked this phrase to strike down displays of the Ten Commandments in public edifices, suppress prayer and scripture recitation in educational institutions, muzzle clergy and even student invocation participation at school functions, and other public expressions of divine recognition, effectively eroding the separation of church and state.
+
+SAMPLE 27 (idx=162)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1132
+Rather, what makes the African Monitor initiative propitious is that it is going to help governments and NGOs alike to identify the constraints to faster progress, and indeed to point the way forward in clearing the logjams.
+
+[BASE]  Sentinel=0.0358  sim=0.8112 acc=0.9660 reason=valid
+What's more, the African Monitor initiative is poised to be a game-changer, as it enables governments and NGOs to pinpoint the bottlenecks hindering accelerated progress, thereby facilitating a paradigm shift in navigating the complex web of obstacles that have been holding them back, and ultimately, to chart a course for breaking through the gridlocks that have been impeding their forward momentum.
+
+[FINETUNED] Sentinel=0.0161  sim=0.8019 acc=0.9762 reason=valid
+What's more, the African Monitor initiative is poised to be a game-changer, as it enables governments and NGOs to pinpoint the bottlenecks hindering accelerated progress, and, more importantly, to chart a course for navigating the complex web of obstacles that have been holding things up, thereby clearing the decks for a smoother ride ahead.
+
+SAMPLE 28 (idx=165)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1918
+In another paper Pearson acknowledges that the absence of punitive marginal tax rates is probably not an important consideration when people in Cape York Peninsula make their decisions about how many hours of the week they allocate to work or leisure.
+
+[BASE]  Sentinel=0.1077  sim=0.8607 acc=0.9629 reason=valid
+In a recent publication, Pearson concedes that the lack of punitive marginal tax rates is unlikely to be a game-changer in the decision-making process for individuals residing in the Cape York Peninsula, who are more concerned with striking a balance between their work-life harmony and discretionary time.
+
+[FINETUNED] Sentinel=0.1077  sim=0.8607 acc=0.9629 reason=valid
+In a recent publication, Pearson concedes that the lack of punitive marginal tax rates is unlikely to be a game-changer in the decision-making process for individuals residing in the Cape York Peninsula, who are more concerned with striking a balance between their work-life harmony and discretionary time.
+
+SAMPLE 29 (idx=166)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2097
+While the direct cost of the tsunami in Japan is estimated at about 4 percent of GDP, the effects were widespread because of electricity shortages in the Kanto region, which accounts for 40 percent of GDP, supply chain disruptions affecting production nationwide, and a sharp decline in sentiment following the earthquake, which weighed heavily on domestic demand.
+
+[BASE]  Sentinel=-0.2473  sim=0.9380 acc=0.9116 reason=valid
+While the direct cost of the tsunami in Japan is estimated to be a relatively modest 4 percent of the country's GDP, the ripple effects were far-reaching due to a perfect storm of electricity shortages in the Kanto region, which is the economic powerhouse accounting for a whopping 40 percent of the nation's GDP, supply chain disruptions that had a nationwide domino effect on production, and a seismic shift in sentiment triggered by the earthquake, which had a crushing impact on domestic demand, leaving a lasting scar on the economy.
+
+[FINETUNED] Sentinel=-0.3748  sim=0.9006 acc=0.9224 reason=valid
+While the direct cost of the tsunami in Japan is estimated to be a mere drop in the ocean compared to the country's overall economic output, the ripple effects were far-reaching due to the crippling power outages in the Kanto region, which is the economic engine of the nation, accounting for a staggering 40 percent of the country's GDP, the supply chain disruptions that sent shockwaves throughout the entire production network, and a seismic shift in consumer confidence triggered by the earthquake, which had a profoundly negative impact on domestic demand, leaving a lasting scar on the economy.
+
+SAMPLE 30 (idx=168)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3866
+Regarding basic health care services, the Brazilian delegation answered that despite 40,000 basic health care units providing health services for free, the number of doctors is still insufficient.
+
+[BASE]  Sentinel=0.3665  sim=0.7988 acc=0.9541 reason=valid
+In terms of fundamental healthcare provisions, the Brazilian delegation responded that despite the fact that approximately 40,000 basic healthcare facilities are offering free health services, the scarcity of medical professionals remains a pressing concern.
+
+[FINETUNED] Sentinel=0.3665  sim=0.7988 acc=0.9541 reason=valid
+In terms of fundamental healthcare provisions, the Brazilian delegation responded that despite the fact that approximately 40,000 basic healthcare facilities are offering free health services, the scarcity of medical professionals remains a pressing concern.
+
+SAMPLE 31 (idx=176)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.1077
+In January 2012, it was reported that further analysis of the Spitzer observations of Ex Lupi can be understood if the forsterite crystalline dust was moving away from the protostar at a remarkable average speed of 38 kilometres per second.
+
+[BASE]  Sentinel=-0.0903  sim=0.9332 acc=0.9168 reason=valid
+In the first month of 2012, a report emerged suggesting that a more in-depth examination of the Spitzer observations of Ex Lupi would only make sense if the forsterite crystalline dust was in a state of rapid egress from the protostar at a truly astonishing average velocity of approximately 38 kilometres per second, a speed that's nothing short of remarkable in the context of stellar evolution.
+
+[FINETUNED] Sentinel=-0.0903  sim=0.9332 acc=0.9168 reason=valid
+In the first month of 2012, a report emerged suggesting that a more in-depth examination of the Spitzer observations of Ex Lupi would only make sense if the forsterite crystalline dust was in a state of rapid egress from the protostar at a truly astonishing average velocity of approximately 38 kilometres per second, a speed that's nothing short of remarkable in the context of stellar evolution.
+
+SAMPLE 32 (idx=177)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.0853
+The researchers cite a few other studies that have shown displacement or changed vocalizing patterns near surveys, to bolster their sense that this study should be added to that emerging body of research suggesting behavioral effects that are not fully accepted yet by the scientific and industrial communities.
+
+[BASE]  Sentinel=0.0987  sim=0.8576 acc=0.9143 reason=valid
+The researchers allude to a handful of other studies that have demonstrated a paradigmatic shift in vocalizing patterns proximal to surveys, thereby bolstering their conviction that this study should be appended to the burgeoning corpus of research indicating behavioral effects that remain contentious within the scientific and industrial communities, where a certain degree of skepticism persists regarding the validity of these findings.
+
+[FINETUNED] Sentinel=0.1738  sim=0.8594 acc=0.9183 reason=valid
+The researchers allude to a handful of other studies that have demonstrated a paradigmatic shift in vocalizing patterns proximal to surveys, thereby bolstering their conviction that this study should be appended to the burgeoning corpus of research indicating behavioral effects that are still not fully endorsed by the scientific and industrial communities, which are notoriously skeptical of novel findings that challenge established norms.
+
+SAMPLE 33 (idx=186)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2568
+Burnett, one of the most important crime writers of the 20th century, is the author of High Sierra, Little Caesar and The Asphalt Jungle.
+
+[BASE]  Sentinel=0.0167  sim=0.8997 acc=0.9676 reason=valid
+Burnett, a luminary of the 20th century's crime fiction canon, is the mastermind behind the iconic novels High Sierra, Little Caesar, and The Asphalt Jungle, a trifecta of gritty, hard-boiled storytelling that has left an indelible mark on the genre.
+
+[FINETUNED] Sentinel=0.0167  sim=0.8997 acc=0.9676 reason=valid
+Burnett, a luminary of the 20th century's crime fiction canon, is the mastermind behind the iconic novels High Sierra, Little Caesar, and The Asphalt Jungle, a trifecta of gritty, hard-boiled storytelling that has left an indelible mark on the genre.
+
+SAMPLE 34 (idx=204)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2985
+Their Energy Star® products and solar power systems allow you to enjoy your savings of superior energy efficiency and at the same time, help you do your part for the environment.
+
+[BASE]  Sentinel=0.2922  sim=0.9213 acc=0.9764 reason=valid
+Their Energy Star-certified products and solar power systems enable you to reap the benefits of superior energy efficiency while simultaneously contributing to a more environmentally conscious lifestyle, thereby allowing you to save money and do your civic duty to preserve the planet for future generations.
+
+[FINETUNED] Sentinel=0.2922  sim=0.9213 acc=0.9764 reason=valid
+Their Energy Star-certified products and solar power systems enable you to reap the benefits of superior energy efficiency while simultaneously contributing to a more environmentally conscious lifestyle, thereby allowing you to save money and do your civic duty to preserve the planet for future generations.
+
+SAMPLE 35 (idx=208)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2617
+International Family Planning Perspectives, 2000, 26(3):118-123 & 130 Sexuality is an area that has long attracted sociologists and anthropologists as well as demographers because of the identified relationships between sexual behaviors and certain reproductive health problems.
+
+[BASE]  Sentinel=0.0647  sim=0.8855 acc=0.9463 reason=valid
+International Family Planning Perspectives, 2000, volume 26, issue 3, a publication that has been a benchmark in the field, delves into the complex interplay between sociological, anthropological, and demographic perspectives on human sexuality, an area that has long fascinated researchers due to the intricate connections between sexual behaviors and various reproductive health conundrums, which have significant implications for public health policy and practice.
+
+[FINETUNED] Sentinel=-0.0416  sim=0.8877 acc=0.9259 reason=valid
+International Family Planning Perspectives, 2000, volume 26, issue 3, a publication that has been a benchmark in the field, delved into the complex interplay between sociological, anthropological, and demographic factors that underpin the intricate relationships between sexual behaviors and a plethora of reproductive health conundrums, which have long fascinated researchers and scholars alike, particularly in the realm of human sexuality.
+
+SAMPLE 36 (idx=224)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1032
+In Volume 9 of this 'Transforming Robot Production Pipeline' series, we will discuss the techniques that were used and some of the issues that were encountered during the lighting and rendering of this transforming robot project.
+
+[BASE]  Sentinel=-0.1544  sim=0.8507 acc=0.9556 reason=valid
+In the forthcoming installment of this 'Transforming Robot Production Pipeline' series, we will delve into the nuts and bolts of the methodologies employed and some of the snags that arose during the illumination and visualization phases of this shape-shifting robot project, which, incidentally, is the ninth in the series.
+
+[FINETUNED] Sentinel=-0.1504  sim=0.7836 acc=0.9513 reason=valid
+In the forthcoming installment of this 'Transforming Robot Production Pipeline' series, we will delve into the nuts and bolts of the methodologies employed and some of the snags that cropped up during the illumination and visualization phases of this shape-shifting robot project, which, incidentally, was a real game-changer in the field of mechatronics.
+
+SAMPLE 37 (idx=229)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3481
+Incorporation of colleges in England and Wales in 1993 by the Tory UK government took colleges out of local authority control and made them independent institutions.
+
+[BASE]  Sentinel=0.3212  sim=0.8960 acc=0.9630 reason=valid
+The incorporation of colleges in England and Wales by the Conservative UK administration in 1993 effectively extricated them from the orbit of local authority governance, thereby transforming them into autonomous entities with a degree of institutional independence.
+
+[FINETUNED] Sentinel=0.2677  sim=0.8504 acc=0.8905 reason=valid
+The incorporation of colleges in England and Wales by the Conservative UK administration in 1993 effectively extricated them from the orbit of local authority governance, thereby transforming them into autonomous entities with a degree of self-regulation, albeit one that was still subject to the overarching framework of national policy.
+
+SAMPLE 38 (idx=240)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1903
+Last, but not least, the indicator generally predicts slowing economic growth, but that slowing growth is widely expected – after 2018's 3+% GDP growth which was fueled in part by tax reform, most economists are looking for the US economy to move closer to trendline in 2019.
+
+[BASE]  Sentinel=0.2423  sim=0.8205 acc=0.9472 reason=valid
+In the final analysis, the indicator tends to suggest a deceleration in economic expansion, although this slowdown is anticipated by many – following the 3+% GDP growth in 2018, which was largely driven by the tax reform, most economists are expecting the US economy to converge towards its long-term trajectory in 2019, thereby bringing it back in line with its underlying growth pattern.
+
+[FINETUNED] Sentinel=0.2404  sim=0.8227 acc=0.9436 reason=valid
+In the final analysis, the indicator tends to suggest a deceleration in economic expansion, although this slowdown is anticipated by many – following the 2018 GDP growth rate of 3%, which was largely driven by the tax reform, most economists are expecting the US economy to converge towards its long-term trajectory in 2019, thereby moving away from the exceptional growth experienced in the previous year.
+
+SAMPLE 39 (idx=241)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2293
+Tobacco-control strategies need more funding so tobacco use can be monitored, nonsmokers can be protected and those who use tobacco products can get the help they need to quit, the researchers concluded.
+
+[BASE]  Sentinel=-0.0488  sim=0.8186 acc=0.9343 reason=valid
+It appears that tobacco-control initiatives require a significant boost in financial backing in order to effectively keep tabs on tobacco use, safeguard the interests of non-smokers, and provide those who are hooked on tobacco products with the requisite support to kick the habit, as the researchers have effectively concluded, it seems.
+
+[FINETUNED] Sentinel=-0.0488  sim=0.8186 acc=0.9343 reason=valid
+It appears that tobacco-control initiatives require a significant boost in financial backing in order to effectively keep tabs on tobacco use, safeguard the interests of non-smokers, and provide those who are hooked on tobacco products with the requisite support to kick the habit, as the researchers have effectively concluded, it seems.
+
+SAMPLE 40 (idx=242)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.4644
+From its current base in the Democratic Republic of Congo and Central African Republic, it continues to perpetrate serious human rights violations and remains a shadow over the region.
+
+[BASE]  Sentinel=0.0715  sim=0.7933 acc=0.9116 reason=valid
+The entity in question, with its operational hub situated in the Democratic Republic of Congo and Central African Republic, continues to be a thorn in the side of regional human rights, casting a long and ominous shadow that looms large over the entire area, perpetrating egregious abuses that are a stark reminder of its malevolent influence.
+
+[FINETUNED] Sentinel=0.0715  sim=0.7933 acc=0.9116 reason=valid
+The entity in question, with its operational hub situated in the Democratic Republic of Congo and Central African Republic, continues to be a thorn in the side of regional human rights, casting a long and ominous shadow that looms large over the entire area, perpetrating egregious abuses that are a stark reminder of its malevolent influence.
+
+SAMPLE 41 (idx=249)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1027
+In March 2014, we posted a training video developed specifically for maternity care nurses and midwives to learn how to teach new parents about biliary atresia home screening.
+
+[BASE]  Sentinel=-0.0293  sim=0.9058 acc=0.9742 reason=valid
+In March 2014, we rolled out a bespoke training video designed to equip maternity care nurses and midwives with the requisite skills to educate expectant parents on the nuances of biliary atresia home screening, a critical aspect of neonatal care that warrants meticulous attention to detail and a deep understanding of the underlying pathophysiology.
+
+[FINETUNED] Sentinel=-0.0241  sim=0.9233 acc=0.9735 reason=valid
+In March 2014, we rolled out a bespoke training video designed to equip maternity care nurses and midwives with the requisite skills to educate expectant parents on the nuances of biliary atresia home screening, thereby empowering them to navigate the complexities of this condition with confidence and precision.
+
+SAMPLE 42 (idx=254)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3894
+It's worth remembering too that socialism wasn't the only political evil of the 20th Century – nationalism had a disastrous influence as well.
+
+[BASE]  Sentinel=0.1173  sim=0.8275 acc=0.9346 reason=valid
+It's well worth keeping in mind that the specter of socialism wasn't the sole bête noire of the 20th Century, as nationalism also had a profoundly malign impact, which was nothing short of a perfect storm that wreaked havoc on the global landscape.
+
+[FINETUNED] Sentinel=0.0215  sim=0.8179 acc=0.9185 reason=valid
+It's well worth keeping in mind that the specter of socialism wasn't the sole bête noire of the 20th Century – the dark underbelly of nationalism also had a profoundly malign influence, which was nothing short of a perfect storm that wreaked havoc on the global landscape.
+
+SAMPLE 43 (idx=256)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.0487
+Ahmed HG, Omer AS, Abd Algaffar S. Cytological study of exfoliative buccal mucosal cells of Qat chewers in Yemen.
+
+[BASE]  Sentinel=0.0776  sim=0.7940 acc=0.9354 reason=valid
+A cytological examination of buccal mucosal cells exfoliated from the oral cavities of individuals habituated to the habitual consumption of qat in Yemen reveals a plethora of cellular alterations.
+
+[FINETUNED] Sentinel=0.0776  sim=0.7940 acc=0.9354 reason=valid
+A cytological examination of buccal mucosal cells exfoliated from the oral cavities of individuals habituated to the habitual consumption of qat in Yemen reveals a plethora of cellular alterations.
+
+SAMPLE 44 (idx=260)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.4446
+Debt settlement: an agreement on debt reduction in which the debtor and creditor agree on a reduced balance as an end to the debt.
+
+[BASE]  Sentinel=0.3168  sim=0.8653 acc=0.9272 reason=valid
+Debt settlement: a mutually binding accord on the diminution of a debt, wherein the debtor and creditor concur on a revised balance that effectively terminates the outstanding obligation, thereby bringing the debt to a close.
+
+[FINETUNED] Sentinel=0.3168  sim=0.8653 acc=0.9272 reason=valid
+Debt settlement: a mutually binding accord on the diminution of a debt, wherein the debtor and creditor concur on a revised balance that effectively terminates the outstanding obligation, thereby bringing the debt to a close.
+
+SAMPLE 45 (idx=264)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.0733
+Fipronil: it's an active substance contained in products such as Flevox or first Frontline; it acts by quickly repelling adult parasites of ticks, fleas and lice (24h for fleas and 48h for ticks), it doesn't kill eggs and larvae.
+
+[BASE]  Sentinel=-0.1515  sim=0.8756 acc=0.9289 reason=valid
+Fipronil is a key constituent of various products, including Flevox and the flagship Frontline, which boasts a rapid efficacy in deterring adult ectoparasites, such as ticks and fleas, with a 24-hour window for fleas and a 48-hour window for ticks, but it's worth noting that it doesn't have a direct impact on the eggs or larvae of these pests, which can continue to hatch and develop despite the treatment.
+
+[FINETUNED] Sentinel=-0.0118  sim=0.9162 acc=0.9331 reason=valid
+Fipronil is a key active constituent found in formulations like Flevox or the flagship product Frontline; it exerts its efficacy by rapidly deterring adult ectoparasites, specifically ticks and fleas, within a 24-hour timeframe for the latter, and a 48-hour window for the former, yet it fails to eradicate the eggs and larvae, which remain unaffected by its action.
+
+SAMPLE 46 (idx=265)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3484
+This work involves using an epidemiologic approach to characterize epigenetic and genetic alteration of genes in the causal pathway for malignancy.
+
+[BASE]  Sentinel=0.2005  sim=0.8372 acc=0.8817 reason=valid
+This endeavour necessitates adopting a paradigmatic epidemiologic framework to elucidate the intricate interplay between epigenetic and genetic perturbations that precipitate alterations in the genomic landscape of malignancy, thereby elucidating the underlying causal pathway that gives rise to this complex disease entity.
+
+[FINETUNED] Sentinel=0.2005  sim=0.8372 acc=0.8817 reason=valid
+This endeavour necessitates adopting a paradigmatic epidemiologic framework to elucidate the intricate interplay between epigenetic and genetic perturbations that precipitate alterations in the genomic landscape of malignancy, thereby elucidating the underlying causal pathway that gives rise to this complex disease entity.
+
+SAMPLE 47 (idx=266)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2497
+In this paper, I address some conceptual issues surrounding Deutsch's solution to this paradox---known as the Knowledge Paradox---which stems from his influential framework for analyzing the behavior of quantum systems in the presence of closed timelike curves (CTCs).
+
+[BASE]  Sentinel=0.0444  sim=0.8793 acc=0.9454 reason=valid
+In this treatise, I delve into the nitty-gritty of certain conceptual conundrums surrounding Deutsch's paradigmatic resolution to the Knowledge Paradox, a conundrum that arises from his seminal framework for probing the behavior of quantum systems in the vicinity of closed timelike curves (CTCs), a notion that has far-reaching implications for our understanding of the fabric of spacetime.
+
+[FINETUNED] Sentinel=0.0186  sim=0.9399 acc=0.9609 reason=valid
+In this treatise, I delve into the nitty-gritty of certain conceptual conundrums surrounding Deutsch's paradigmatic solution to the Knowledge Paradox, a conundrum that arises from the far-reaching implications of his seminal framework for probing the behavior of quantum systems in the presence of closed timelike curves (CTCs), a notion that has been a thorn in the side of physicists for decades.
+
+SAMPLE 48 (idx=274)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3311
+To protect both the international community and the affected countries, WHO introduced enhanced rumor surveillance for reports of avian influenza H5N1, a process of investigating unofficial reports of disease events to determine their veracity.
+
+[BASE]  Sentinel=0.2723  sim=0.7873 acc=0.9451 reason=valid
+In order to safeguard both the global community and the countries most directly impacted, the World Health Organization has implemented a heightened state of vigilance regarding unsubstantiated claims of avian influenza H5N1, a multifaceted process aimed at scrutinizing unofficial reports of disease occurrences to verify their factual basis and assess their potential implications for public health.
+
+[FINETUNED] Sentinel=0.2723  sim=0.7873 acc=0.9451 reason=valid
+In order to safeguard both the global community and the countries most directly impacted, the World Health Organization has implemented a heightened state of vigilance regarding unsubstantiated claims of avian influenza H5N1, a multifaceted process aimed at scrutinizing unofficial reports of disease occurrences to verify their factual basis and assess their potential implications for public health.
+
+SAMPLE 49 (idx=288)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3976
+Experts say that the majority of those who took to the streets in London last summer were young people who were unemployed, out of school and not participating in a job training program.
+
+[BASE]  Sentinel=0.3018  sim=0.8091 acc=0.9672 reason=valid
+According to the experts, the overwhelming majority of the youthful contingent that descended upon the streets of London last summer comprised individuals who were not only struggling to find employment, but also lacked the benefit of a formal education and were not enrolled in any vocational training initiatives, which is a rather striking phenomenon that warrants further investigation.
+
+[FINETUNED] Sentinel=0.3367  sim=0.8216 acc=0.9652 reason=valid
+According to the experts, the overwhelming majority of the youthful contingent that took to the streets in London last summer comprised individuals who were not only struggling to find employment, but also had recently dropped out of the education system and were not enrolled in any vocational training initiatives, which is a rather disconcerting trend that has been observed in many urban areas.
+
+SAMPLE 50 (idx=310)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.0327
+Our study was conducted in the sub-alpine lentic habitats of three wilderness areas that form the core of the Klamath-Siskiyou Bioregion of northern California, a biodiversity 'hotspot' that supports the highest diversity of sub-alpine, lentic-breeding amphibians in the western USA.
+
+[BASE]  Sentinel=0.1444  sim=0.8083 acc=0.9599 reason=valid
+Our research was undertaken in the sub-alpine aquatic ecosystems of three remote wilderness zones that constitute the central nucleus of the Klamath-Siskiyou Bioregion, a region of exceptional ecological richness in northern California, which boasts the highest degree of amphibian diversity in the western United States, particularly among those species that breed in standing water.
+
+[FINETUNED] Sentinel=-0.1622  sim=0.8565 acc=0.9216 reason=valid
+Our research was undertaken in the sub-alpine, lentic water bodies of three wilderness areas that constitute the central nucleus of the Klamath-Siskiyou Bioregion, a region of exceptional biodiversity that boasts the highest degree of taxonomic richness of sub-alpine, lentic-breeding amphibians in the western United States, a locale that has been dubbed a 'hotspot' by conservationists due to its unique ecological characteristics and the resultant high level of endemism.
+
+SAMPLE 51 (idx=322)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.2037
+The book tells the story of the Chickasaw Nation before, during, and right after the removal process especially a lot of the financial fraud that occurred with removal at the expense of the Chickasaw Nation and their resilience as a nation through hardship and adversity.
+
+[BASE]  Sentinel=-0.2551  sim=0.8730 acc=0.9209 reason=valid
+The book offers a comprehensive account of the Chickasaw Nation's trajectory, navigating the complex landscape of their pre-removal, removal, and post-removal experiences, with a particular emphasis on the egregious financial improprieties that were perpetrated against the Chickasaw Nation, which not only exacted a heavy toll on their economic well-being but also tested their collective resolve and national cohesion in the face of unrelenting hardship and adversity, thereby underscoring their remarkable resilience as a nation that refused to be defined by the vicissitudes of their circumstances.
+
+[FINETUNED] Sentinel=-0.2551  sim=0.8730 acc=0.9209 reason=valid
+The book offers a comprehensive account of the Chickasaw Nation's trajectory, navigating the complex landscape of their pre-removal, removal, and post-removal experiences, with a particular emphasis on the egregious financial improprieties that were perpetrated against the Chickasaw Nation, which not only exacted a heavy toll on their economic well-being but also tested their collective resolve and national cohesion in the face of unrelenting hardship and adversity, thereby underscoring their remarkable resilience as a nation that refused to be defined by the vicissitudes of their circumstances.
+
+SAMPLE 52 (idx=323)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3885
+Dr. Braverman treats hypertension with a two-part program of diet and nutrients.
+
+[BASE]  Sentinel=0.2779  sim=0.8324 acc=0.9801 reason=valid
+Dr. Braverman spearheads a multifaceted approach to managing hypertension, which involves a dual-pronged strategy that incorporates both dietary modifications and targeted nutritional interventions.
+
+[FINETUNED] Sentinel=0.2779  sim=0.8324 acc=0.9801 reason=valid
+Dr. Braverman spearheads a multifaceted approach to managing hypertension, which involves a dual-pronged strategy that incorporates both dietary modifications and targeted nutritional interventions.
+
+SAMPLE 53 (idx=326)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2464
+A research group will usually consist of people with varying levels of expertise and in different domains and these meetings are organized to make each one aware of the expertise that flows in the group, in case you find the need to tap into it at some point.
+
+[BASE]  Sentinel=0.3300  sim=0.8145 acc=0.9760 reason=valid
+A research group typically comprises individuals with diverse skill sets and a broad range of disciplinary backgrounds, and these gatherings are convened to facilitate an awareness of the collective expertise that permeates the group, thereby enabling team members to tap into it as and when the need arises, which is often the case when tackling complex problems that require a multidisciplinary approach.
+
+[FINETUNED] Sentinel=0.3086  sim=0.8224 acc=0.9764 reason=valid
+A research group typically comprises individuals with diverse skill sets and a broad range of disciplinary backgrounds, and these gatherings are convened to facilitate an awareness of the collective expertise that permeates the group, thereby enabling team members to tap into it as and when the need arises, which is often the case when tackling complex problems that require interdisciplinary approaches.
+
+SAMPLE 54 (idx=327)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.1559
+Although winter protection is generally not necessary with these hardy roses, if you are trying to grow a variety that is tender in your area you can protect it in winter with either an overwintering blanket or by mounding the base with a mulch such as bark chips.
+
+[BASE]  Sentinel=-0.0784  sim=0.8517 acc=0.9695 reason=valid
+While it's true that these robust roses can usually fend for themselves during the winter months, if you're attempting to cultivate a particularly delicate variety in your locale, you might want to consider providing some extra TLC by either draping it with a protective covering, akin to a winter blanket, or by piling up a layer of mulch, such as wood chips, around its base to shield it from the harsh elements.
+
+[FINETUNED] Sentinel=-0.1355  sim=0.8465 acc=0.9705 reason=valid
+While it's true that these robust roses can usually fend for themselves during the winter months, if you're attempting to cultivate a particularly delicate variety in your region, you might want to consider providing some extra TLC by either draping it with a protective covering, such as a frost blanket, or by piling up a layer of organic mulch, like bark chips, around its base to shield it from the harsh winter conditions, thereby giving it a bit of a leg up in the fight against the elements.
+
+SAMPLE 55 (idx=344)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3277
+However, Elliss argument does not depend critically on the role of quantum phenomena in consciousness, but rather on the coherence and explanatory scope of the theological vision he proposes.
+
+[BASE]  Sentinel=0.1301  sim=0.9417 acc=0.9311 reason=valid
+However, Ellis's argument hinges on the nuances of his theological paradigm, which, although not necessarily predicated on the pivotal role of quantum phenomena in the enigmatic realm of consciousness, is instead contingent upon the coherence and explanatory purview of the theological vision he espouses, thereby underscoring the significance of his philosophical framework in this regard.
+
+[FINETUNED] Sentinel=0.1321  sim=0.9433 acc=0.9320 reason=valid
+However, Ellis's argument hinges on the nuances of his theological paradigm, which, while not necessarily predicated on the pivotal role of quantum phenomena in the enigmatic realm of consciousness, is instead contingent upon the coherence and explanatory purview of the theological vision he espouses, thereby underscoring the significance of his philosophical framework in this regard.
+
+SAMPLE 56 (idx=351)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3541
+When you are writing a persuasive essay, you need to write it in a way that it presents the fact and persuades the reader to think about the topic in a different way other than what was originally presented.
+
+[BASE]  Sentinel=0.2648  sim=0.8441 acc=0.9766 reason=valid
+When crafting a persuasive essay, it's essential to pen it in a manner that effectively conveys the facts while subtly shifting the reader's perspective, encouraging them to reevaluate the subject matter from a fresh angle, rather than merely presenting a rehashing of the original narrative.
+
+[FINETUNED] Sentinel=0.2648  sim=0.8441 acc=0.9766 reason=valid
+When crafting a persuasive essay, it's essential to pen it in a manner that effectively conveys the facts while subtly shifting the reader's perspective, encouraging them to reevaluate the subject matter from a fresh angle, rather than merely presenting a rehashing of the original narrative.
+
+SAMPLE 57 (idx=359)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2425
+The White House Science Fair was sponsored by a commitment the president made at the launch of his Educate to Innovate campaign to inspire boys and girls to excel in math and science.
+
+[BASE]  Sentinel=-0.0053  sim=0.8793 acc=0.9571 reason=valid
+The White House Science Fair was spearheaded by a pledge the president made at the kick-off of his flagship Educate to Innovate initiative, aimed at galvanizing the next generation of math and science whizzes to reach their full potential and excel in these STEM fields, which he had championed since the inception of his administration.
+
+[FINETUNED] Sentinel=-0.0053  sim=0.8793 acc=0.9571 reason=valid
+The White House Science Fair was spearheaded by a pledge the president made at the kick-off of his flagship Educate to Innovate initiative, aimed at galvanizing the next generation of math and science whizzes to reach their full potential and excel in these STEM fields, which he had championed since the inception of his administration.
+
+SAMPLE 58 (idx=372)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2444
+Electronic data storage, which is used in modern computers, dates from the Second World War, when a form of delay line memory was developed to remove the clutter from radar signals, the first practical application of which was the mercury delay line.
+
+[BASE]  Sentinel=0.1759  sim=0.9257 acc=0.9548 reason=valid
+The advent of electronic data storage, a ubiquitous feature in contemporary computing, can be traced back to the tumultuous period of the Second World War, during which a pioneering innovation in the realm of delay line memory emerged, aimed at filtering out the extraneous noise from radar signals, a breakthrough that ultimately found its first practical manifestation in the mercury delay line, a technological precursor to the modern data storage solutions that have since become an indispensable component of our digital landscape.
+
+[FINETUNED] Sentinel=0.1759  sim=0.9257 acc=0.9548 reason=valid
+The advent of electronic data storage, a ubiquitous feature in contemporary computing, can be traced back to the tumultuous period of the Second World War, during which a pioneering innovation in the realm of delay line memory emerged, aimed at filtering out the extraneous noise from radar signals, a breakthrough that ultimately found its first practical manifestation in the mercury delay line, a technological precursor to the modern data storage solutions that have since become an indispensable component of our digital landscape.
+
+SAMPLE 59 (idx=374)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2872
+Alternatively, we could presume that certain social groups would have an interest in using a form of humour, which invokes a spontaneous, joyful satiric laughter of the people.
+
+[BASE]  Sentinel=0.1028  sim=0.8246 acc=0.9465 reason=valid
+In a rather counterfactual scenario, it's conceivable that specific socio-cultural collectives might have a vested interest in harnessing a particular brand of humour that triggers a spontaneous, effervescent, and unbridled satirical laughter from the general populace, which could be interpreted as a form of catharsis or a release of pent-up social energies.
+
+[FINETUNED] Sentinel=0.0855  sim=0.8248 acc=0.9431 reason=valid
+In a rather counterfactual scenario, it's conceivable that specific socio-cultural collectives might have a vested interest in harnessing a particular brand of humour that triggers a spontaneous, effervescent, and unbridled satirical laughter from the general populace, which is often a hallmark of a society's collective psyche.
+
+SAMPLE 60 (idx=378)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.0509
+Using this information and any information you bring regarding your child, the team will determine if your child has or is suspected of having a mental or physical disability and if so, whether or not that disability is impacting a major life activity as compared to his or her classroom/school peers.
+
+[BASE]  Sentinel=0.0515  sim=0.8117 acc=0.9388 reason=valid
+Given the information you provide and any supplementary data you bring to the table regarding your child, the team will conduct a comprehensive assessment to ascertain whether your child's cognitive or physical abilities are being compromised, and if so, whether this impairment is significantly hindering their participation in a major life activity relative to their peers in the classroom or school setting, thereby necessitating accommodations or support to ensure their full inclusion and equal opportunities.
+
+[FINETUNED] Sentinel=0.0459  sim=0.8127 acc=0.9364 reason=valid
+Given the information you provide and any supplementary data you bring to the table regarding your child, the team will conduct a comprehensive assessment to ascertain whether your child's cognitive or physical abilities are being compromised, and if so, whether this impairment is significantly hindering their participation in a major life activity relative to their peers in the classroom or school setting, thereby necessitating accommodations or support to ensure their full inclusion and equal opportunities for success.
+
+SAMPLE 61 (idx=392)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.2161
+The data can also be accessed by your vet to keep your animal chums in fine health.
+
+[BASE]  Sentinel=0.3106  sim=0.8406 acc=0.9666 reason=valid
+Your veterinarian will have access to the data, which enables them to keep your animal companions in top-notch condition, thereby ensuring their overall well-being and optimal health status.
+
+[FINETUNED] Sentinel=0.3106  sim=0.8406 acc=0.9666 reason=valid
+Your veterinarian will have access to the data, which enables them to keep your animal companions in top-notch condition, thereby ensuring their overall well-being and optimal health status.
+
+SAMPLE 62 (idx=402)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3031
+On the rare occasion that a student does not follow this advice the tutor will remind them of the correct way to use the equipment and if necessary recommend/remove the equipment to ensure the safety of the person/s involved.
+
+[BASE]  Sentinel=0.1627  sim=0.8196 acc=0.9795 reason=valid
+In the unlikely event that a student fails to heed this guidance, the tutor will discreetly bring to their attention the proper protocol for operating the equipment, and if deemed necessary, will discreetly withdraw the equipment to safeguard the well-being of all parties involved, thereby mitigating any potential risks and ensuring a safe learning environment for everyone concerned.
+
+[FINETUNED] Sentinel=0.1855  sim=0.8009 acc=0.9784 reason=valid
+In the unlikely event that a student fails to heed this guidance, the tutor will discreetly bring to their attention the proper protocol for operating the equipment, and if deemed necessary, will discreetly withdraw the equipment to safeguard the well-being of all parties involved, thereby preventing any potential mishaps that might arise from misuse or mismanagement of the equipment.
+
+SAMPLE 63 (idx=403)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3739
+However, the researchers note, the rate of both cancers in the study was lower than would have been expected in the population of menopausal women as a whole.
+
+[BASE]  Sentinel=0.3050  sim=0.8795 acc=0.9244 reason=valid
+Notwithstanding the researchers' observations, the incidence of both cancers in the study was significantly lower than one would have anticipated in the broader demographic of postmenopausal women, which is a population that would typically exhibit a higher propensity for these types of malignancies.
+
+[FINETUNED] Sentinel=0.2928  sim=0.9145 acc=0.9084 reason=valid
+Notwithstanding the researchers' observations, the incidence of both cancers in the study was significantly lower than one would have anticipated in the broader demographic of postmenopausal women, which is a population that would typically exhibit a higher cancer rate.
+
+SAMPLE 64 (idx=406)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1065
+A third object of the present invention is to provide a method of staple-suturing in which the closed position of the staple is predetermined during the process of manufacturing the staple.
+
+[BASE]  Sentinel=0.1567  sim=0.7882 acc=0.9292 reason=valid
+The third key objective of the present innovation is to devise a manufacturing process that enables the pre-definition of the closed state of the staple, thereby ensuring a consistent outcome throughout the production cycle, which is a critical factor in the overall efficiency of the staple-suturing technique.
+
+[FINETUNED] Sentinel=0.1388  sim=0.7955 acc=0.8996 reason=valid
+The third objective of the present innovation is to devise a manufacturing process that enables the pre-determination of the closed state of the staple, thereby ensuring a consistent outcome throughout the production cycle, which is a critical factor in the overall efficiency of the staple-suturing technique.
+
+SAMPLE 65 (idx=408)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3874
+Liberty Electric Cars is a clean technology company based in Coventry, which is designing, engineering and manufacturing leading-edge electric vehicle technology to serve growing demand for zero-emission transport solutions in markets around the world.
+
+[BASE]  Sentinel=0.2686  sim=0.9646 acc=0.9496 reason=valid
+Liberty Electric Cars is a cutting-edge clean tech firm with a strong foothold in Coventry, a city that's been at the forefront of innovation in the automotive sector, where they're spearheading the development of bleeding-edge electric vehicle tech that's poised to meet the burgeoning need for zero-emission transportation solutions in a rapidly globalizing market.
+
+[FINETUNED] Sentinel=0.2686  sim=0.9646 acc=0.9496 reason=valid
+Liberty Electric Cars is a cutting-edge clean tech firm with a strong foothold in Coventry, a city that's been at the forefront of innovation in the automotive sector, where they're spearheading the development of bleeding-edge electric vehicle tech that's poised to meet the burgeoning need for zero-emission transportation solutions in a rapidly globalizing market.
+
+SAMPLE 66 (idx=423)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2386
+So far, aggregate measures of labor compensation were showing only moderate increases, but looking ahead, the possibility that labor costs might rise more rapidly as a result of the tightness in labor market was seen as an upside risk to inflation.
+
+[BASE]  Sentinel=0.0814  sim=0.9153 acc=0.9503 reason=valid
+So far, aggregate measures of labor compensation have been exhibiting a relatively modest uptick, but looking down the road, the prospect that labor costs might escalate more precipitously as a result of the burgeoning labor market tightness is viewed as a latent upside risk to inflation, which could potentially throw a wrench into the works of monetary policymakers' plans to keep price increases in check.
+
+[FINETUNED] Sentinel=0.1903  sim=0.9186 acc=0.9514 reason=valid
+So far, aggregate measures of labor compensation have been exhibiting a relatively modest uptick, but looking over the horizon, the prospect that labor costs might escalate more precipitously as a result of the burgeoning labor market tightness is viewed as a latent upside risk to inflation, which could potentially upset the delicate balance between economic growth and price stability.
+
+SAMPLE 67 (idx=428)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1734
+The spiral flute provides a continuous flow of product into the air stream compared to the dumping/pulsing action of straight fluted metering systems.
+
+[BASE]  Sentinel=0.2089  sim=0.8753 acc=0.9706 reason=valid
+In contrast to the abrupt, pulsating discharge characteristic of traditional straight-fluted metering systems, the spiral flute facilitates a sustained, uninterrupted influx of product into the airstream, thereby optimizing the fluid dynamics of the entire process.
+
+[FINETUNED] Sentinel=0.2060  sim=0.8788 acc=0.9684 reason=valid
+In contrast to the abrupt, pulsating discharge characteristic of traditional straight-fluted metering systems, the spiral flute facilitates a sustained, unbroken influx of product into the airstream, thereby optimizing the fluid dynamics of the entire process.
+
+SAMPLE 68 (idx=456)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.4308
+In 2001, the government began a $66 million program to train and find jobs for citizens, but unemployment still continues to be a burgeoning problem with thousands of Bahrainis entering the job market each year.
+
+[BASE]  Sentinel=0.2484  sim=0.8478 acc=0.9728 reason=valid
+In 2001, the government initiated a substantial $66 million undertaking to equip and place Bahraini nationals in the workforce, yet the specter of unemployment persists, with a considerable number of Bahrainis continuing to flood the job market on an annual basis, thereby underscoring the pressing need for effective solutions to this burgeoning issue.
+
+[FINETUNED] Sentinel=0.2484  sim=0.8478 acc=0.9728 reason=valid
+In 2001, the government initiated a substantial $66 million undertaking to equip and place Bahraini nationals in the workforce, yet the specter of unemployment persists, with a considerable number of Bahrainis continuing to flood the job market on an annual basis, thereby underscoring the pressing need for effective solutions to this burgeoning issue.
+
+SAMPLE 69 (idx=488)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1017
+Discussing what it meant by 'target area,' this court, in Karseal, referred to it as a factor in determining whether there was proximate causation.
+
+[BASE]  Sentinel=0.1337  sim=0.8357 acc=0.8469 reason=valid
+The court in Karseal, in the course of deliberating on the nuances of 'target area,' posited that it was a pivotal consideration in assessing whether a proximate causal link existed, thereby influencing the outcome of the case.
+
+[FINETUNED] Sentinel=0.1337  sim=0.8357 acc=0.8469 reason=valid
+The court in Karseal, in the course of deliberating on the nuances of 'target area,' posited that it was a pivotal consideration in assessing whether a proximate causal link existed, thereby influencing the outcome of the case.
+
+SAMPLE 70 (idx=494)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.0865
+In the asymmetric unit, molecules are linked by two strong O—H[cdots, three dots, centered]O hydrogen bonds.
+
+[BASE]  Sentinel=0.1456  sim=0.8462 acc=0.7212 reason=valid
+In the asymmetric unit, a complex network of intermolecular interactions is sustained by a plethora of strong O—H[cdots, three dots, centered]O hydrogen bonds, which are a hallmark of the intricate molecular architecture.
+
+[FINETUNED] Sentinel=0.1456  sim=0.8462 acc=0.7212 reason=valid
+In the asymmetric unit, a complex network of intermolecular interactions is sustained by a plethora of strong O—H[cdots, three dots, centered]O hydrogen bonds, which are a hallmark of the intricate molecular architecture.
+
+SAMPLE 71 (idx=500)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.4270
+The entry contains protocol information required by the router or bridge for directing the data transmission to the designated destination.
+
+[BASE]  Sentinel=0.3413  sim=0.8237 acc=0.9595 reason=valid
+The entry comprises a set of parameters that are ostensibly necessary for the router or bridge to facilitate the data transmission process, thereby ensuring that the data reaches its intended recipient at the designated endpoint.
+
+[FINETUNED] Sentinel=0.3668  sim=0.7984 acc=0.9575 reason=valid
+The entry comprises a set of parameters that are ostensibly necessary for the router or bridge to facilitate the data transmission process, thereby ensuring that the data reaches its intended recipient in a manner that is both expedient and efficient.
+
+SAMPLE 72 (idx=506)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1255
+In this Sutra the highest stage of Pranayama, i.e., going beyond internal (Puraka) and external (Rechaka), is given.
+
+[BASE]  Sentinel=0.0402  sim=0.8425 acc=0.8998 reason=valid
+In this Sutra, the apical culmination of Pranayama, which transcends the dichotomy between the internal (Puraka) and external (Rechaka) modalities, is succinctly encapsulated.
+
+[FINETUNED] Sentinel=0.0671  sim=0.7992 acc=0.8812 reason=valid
+In this Sutra, the apogee of Pranayama, which transcends the dichotomy between the inwardly-directed (Puraka) and outwardly-directed (Rechaka) aspects, is succinctly encapsulated.
+
+SAMPLE 73 (idx=509)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2703
+In A/B testing, a test that is run on two A pages (pages on which no changes have been made) in order to establish a baseline and make sure the traffic isn't adversely affected.
+
+[BASE]  Sentinel=0.1331  sim=0.8192 acc=0.9153 reason=valid
+In the context of A/B testing, a control test that's conducted on two baseline pages – essentially, untouched replicas of the original site – is run in order to establish a benchmark and verify that the traffic isn't negatively impacted by the test itself, thereby ensuring that any observed effects can be reasonably attributed to the variations being tested rather than to some other external factor.
+
+[FINETUNED] Sentinel=0.1613  sim=0.8426 acc=0.9196 reason=valid
+In the context of A/B testing, a control test that's run on two baseline pages – essentially, the original, unaltered versions of the pages – is conducted to establish a benchmark and verify that the traffic isn't negatively impacted by the test itself, thereby ensuring that any observed effects can be attributed to the variations under scrutiny rather than to some unforeseen external factor.
+
+SAMPLE 74 (idx=514)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3686
+Princeton University Pliny Fisk Library of Economics & Finance The Pliny Fisk Library of Economics & Finance provides a detailed guide to finding and using financial data.
+
+[BASE]  Sentinel=0.1681  sim=0.8874 acc=0.9738 reason=valid
+The Princeton University Pliny Fisk Library of Economics & Finance, a veritable treasure trove of financial information, offers a comprehensive roadmap to navigating the labyrinthine world of financial data, providing users with a detailed, step-by-step guide to uncovering and leveraging relevant financial resources.
+
+[FINETUNED] Sentinel=0.1681  sim=0.8874 acc=0.9738 reason=valid
+The Princeton University Pliny Fisk Library of Economics & Finance, a veritable treasure trove of financial information, offers a comprehensive roadmap to navigating the labyrinthine world of financial data, providing users with a detailed, step-by-step guide to uncovering and leveraging relevant financial resources.
+
+SAMPLE 75 (idx=520)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1966
+The Centers for Disease Control noted an outbreak of fentanyl overdoses and deaths between 2005 and 2007, and a partnership between the DEA and CDC noted 1,013 overdose deaths directly related to fentanyl abuse without a prescription.
+
+[BASE]  Sentinel=0.1731  sim=0.8963 acc=0.9373 reason=valid
+The Centers for Disease Control and Prevention observed a spike in fentanyl-related fatalities and a rash of overdose cases between the years 2005 and 2007, which prompted a collaborative effort between the Drug Enforcement Administration and the Centers for Disease Control and Prevention to investigate the alarming trend of 1,013 overdose fatalities directly linked to fentanyl misuse in the absence of a legitimate prescription.
+
+[FINETUNED] Sentinel=0.1731  sim=0.8963 acc=0.9373 reason=valid
+The Centers for Disease Control and Prevention observed a spike in fentanyl-related fatalities and a rash of overdose cases between the years 2005 and 2007, which prompted a collaborative effort between the Drug Enforcement Administration and the Centers for Disease Control and Prevention to investigate the alarming trend of 1,013 overdose fatalities directly linked to fentanyl misuse in the absence of a legitimate prescription.
+
+SAMPLE 76 (idx=524)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2998
+His primary focus was ending federal prohibition of marijuana, but his efforts also included signing on to those bills that were intended to protect states that had enacted marijuana legalization from federal kickback.
+
+[BASE]  Sentinel=0.2299  sim=0.8206 acc=0.9402 reason=valid
+His main thrust was geared towards dismantling the federal ban on cannabis, but his endeavors also entailed lending his support to those legislative measures that aimed to shield states that had already legalized marijuana from potential federal pushback, which could have resulted in a range of retaliatory actions, including the revocation of funding and the withholding of federal benefits.
+
+[FINETUNED] Sentinel=0.2299  sim=0.8206 acc=0.9402 reason=valid
+His main thrust was geared towards dismantling the federal ban on cannabis, but his endeavors also entailed lending his support to those legislative measures that aimed to shield states that had already legalized marijuana from potential federal pushback, which could have resulted in a range of retaliatory actions, including the revocation of funding and the withholding of federal benefits.
+
+SAMPLE 77 (idx=532)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.0525
+Edited by Brooke Neuman - SIM Management for Mobile Termination To offer better rates on local mobile networks, Internet Telephony Service Providers (ITSPs) have to optimize Call Termination costs and maximize SIM cards usage.
+
+[BASE]  Sentinel=0.0621  sim=0.8593 acc=0.9539 reason=valid
+In order to provide more competitive tariffs on local mobile networks, Internet Telephony Service Providers (ITSPs) need to fine-tune their Call Termination expenses and get the most out of their SIM card allocation in order to stay ahead of the game.
+
+[FINETUNED] Sentinel=0.0658  sim=0.8494 acc=0.9577 reason=valid
+In order to provide more competitive tariffs on local mobile networks, Internet Telephony Service Providers (ITSPs) need to fine-tune their Call Termination expenses and get the most out of their SIM card inventory in a bid to stay ahead of the game.
+
+SAMPLE 78 (idx=543)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1235
+The American Academy of Pediatrics recommends moms breastfeed newborns for 12 months — exclusively for the first 6 months, then in combination with the introduction of foods to the baby's diet.
+
+[BASE]  Sentinel=0.1404  sim=0.9462 acc=0.9782 reason=valid
+The American Academy of Pediatrics advises mothers to exclusively breastfeed their newborns for a period of 12 months, with a particular emphasis on the initial six months, after which a gradual transition to a mixed feeding regimen, incorporating solid foods into the infant's culinary repertoire, is recommended.
+
+[FINETUNED] Sentinel=0.1404  sim=0.9462 acc=0.9782 reason=valid
+The American Academy of Pediatrics advises mothers to exclusively breastfeed their newborns for a period of 12 months, with a particular emphasis on the initial six months, after which a gradual transition to a mixed feeding regimen, incorporating solid foods into the infant's culinary repertoire, is recommended.
+
+SAMPLE 79 (idx=545)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2008
+When active area 152 a is used as a generator to convert from electrical energy to mechanical energy, deflection of the portion 151 a causes a change in electric field in the portion 151 a that is received as a change in voltage difference by the electrodes 154 a and 154 b.
+
+[BASE]  Sentinel=0.1493  sim=0.8086 acc=0.7632 reason=valid
+When the active area 152 a is leveraged as a power converter to transmute electrical energy into mechanical energy, the deflection of the pertinent portion 151 a triggers a paradigmatic shift in the electric field within the aforementioned portion 151 a, which is subsequently interpreted as a fluctuation in the voltage differential by the electrodes 154 a and 154 b, thereby necessitating an adjustment in the system's operational dynamics.
+
+[FINETUNED] Sentinel=0.1493  sim=0.8086 acc=0.7632 reason=valid
+When the active area 152 a is leveraged as a power converter to transmute electrical energy into mechanical energy, the deflection of the pertinent portion 151 a triggers a paradigmatic shift in the electric field within the aforementioned portion 151 a, which is subsequently interpreted as a fluctuation in the voltage differential by the electrodes 154 a and 154 b, thereby necessitating an adjustment in the system's operational dynamics.
+
+SAMPLE 80 (idx=550)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3049
+The Composite Wing Center will make it all possible, allowing for the production of massive carbon fiber composite wings in its three specially built autoclaves.
+
+[BASE]  Sentinel=0.0868  sim=0.8318 acc=0.9678 reason=valid
+The Composite Wing Center will be the linchpin that makes everything else fall into place, enabling the large-scale manufacture of cutting-edge carbon fibre composite wings within its bespoke autoclave facilities, which are specifically designed to accommodate the production of such massive structures.
+
+[FINETUNED] Sentinel=0.0868  sim=0.8318 acc=0.9678 reason=valid
+The Composite Wing Center will be the linchpin that makes everything else fall into place, enabling the large-scale manufacture of cutting-edge carbon fibre composite wings within its bespoke autoclave facilities, which are specifically designed to accommodate the production of such massive structures.
+
+SAMPLE 81 (idx=553)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1003
+With In Our Time (1925) Hemingway drew on his experiences while summering in Michigan to depict the initiation into the world of pain and violence of young Nick Adams, a model for later Hemingway heroes.
+
+[BASE]  Sentinel=-0.0516  sim=0.9006 acc=0.8488 reason=valid
+In the seminal novel With Our Time (1925), Hemingway tapped into his formative experiences of summertime escapades in Michigan to craft a narrative that skillfully navigates the threshold of initiation into the brutal realities of pain and violence, a pivotal moment in the development of the archetypal Hemingway protagonist, Nick Adams, whose character would later serve as a paradigm for a host of subsequent Hemingway heroes.
+
+[FINETUNED] Sentinel=-0.0516  sim=0.9006 acc=0.8488 reason=valid
+In the seminal novel With Our Time (1925), Hemingway tapped into his formative experiences of summertime escapades in Michigan to craft a narrative that skillfully navigates the threshold of initiation into the brutal realities of pain and violence, a pivotal moment in the development of the archetypal Hemingway protagonist, Nick Adams, whose character would later serve as a paradigm for a host of subsequent Hemingway heroes.
+
+SAMPLE 82 (idx=554)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3735
+According to state law, for the purposes of zoning, group homes for the disabled are considered single-family dwellings.
+
+[BASE]  Sentinel=0.3274  sim=0.8655 acc=0.9686 reason=valid
+In accordance with the relevant statutes governing land-use regulations, group residences catering to individuals with disabilities are effectively treated as conventional single-family homes for the purposes of zoning ordinances and related municipal bylaws.
+
+[FINETUNED] Sentinel=0.3200  sim=0.8280 acc=0.9707 reason=valid
+In accordance with the relevant state legislation, for the purposes of land-use classification, group residences catering to individuals with disabilities are treated as conventional single-family abodes under the zoning regulations.
+
+SAMPLE 83 (idx=567)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1298
+It is at this juncture the educators across disciplines must look-up to design thinking, in order to bring out that balance for the various domains of specialization, with new attitudes and capabilities within an educational and university set-up.
+
+[BASE]  Sentinel=0.2906  sim=0.8470 acc=0.9744 reason=valid
+At this critical juncture, educators from diverse disciplines must draw upon the principles of design thinking in order to strike a delicate balance between the various domains of specialization, which necessitates a paradigm shift in the way they approach education and university settings, requiring a fundamental overhaul of their attitudes and capabilities, and a wholesale reorientation of their pedagogical frameworks to accommodate the evolving needs of an increasingly complex and interconnected world.
+
+[FINETUNED] Sentinel=0.2986  sim=0.8498 acc=0.9752 reason=valid
+At this critical juncture, educators from diverse disciplines must draw upon the principles of design thinking in order to strike a delicate balance between the various domains of specialization, which necessitates a paradigm shift in the way they approach education and university settings, requiring a fundamental overhaul of their attitudes and capabilities, and a wholesale revision of their pedagogical frameworks and methodologies to accommodate the evolving needs of an increasingly complex and interconnected world.
+
+SAMPLE 84 (idx=577)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2069
+Both the uppercase and lowercase version of the letter are shown along with a large block outline that encourages the child to trace the shape of the letter (7 pages).
+
+[BASE]  Sentinel=0.0737  sim=0.8604 acc=0.9507 reason=valid
+The uppercase and lowercase versions of the letter are simultaneously presented alongside a substantial, block-shaped outline that prompts the young learner to replicate the precise contours of the letter, as seen on seven separate pages.
+
+[FINETUNED] Sentinel=0.0737  sim=0.8604 acc=0.9507 reason=valid
+The uppercase and lowercase versions of the letter are simultaneously presented alongside a substantial, block-shaped outline that prompts the young learner to replicate the precise contours of the letter, as seen on seven separate pages.
+
+SAMPLE 85 (idx=588)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.0437
+Emergency & Security Medications, Attention Deficit Disorder, and Hepatitis Medication in School School personnel may assist a student to manage prescription and non-prescription medication only under the directions of a physician.
+
+[BASE]  Sentinel=0.0713  sim=0.8350 acc=0.9787 reason=valid
+School personnel, who are authorized to provide medical support, may offer assistance to students in navigating the complexities of prescription and over-the-counter medication management under the guidance of a qualified physician, who has the authority to prescribe and monitor the administration of Emergency & Security Medications, Attention Deficit Disorder treatments, and Hepatitis Medications, in accordance with established protocols and procedures.
+
+[FINETUNED] Sentinel=0.0619  sim=0.8395 acc=0.9783 reason=valid
+School personnel, who are authorized to provide medical support, may offer assistance to students in navigating the complexities of prescription and over-the-counter medication management under the guidance of a qualified physician, who has the requisite expertise in the administration of Emergency & Security Medications, Attention Deficit Disorder treatments, and Hepatitis Medication protocols.
+
+SAMPLE 86 (idx=594)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1288
+The Little Dragons class at LDMA is designed to ease our 3-5 year olds students into our Taekwondo program by teaching them the basic stances and techniques while working with them on their flexibility, coordination and balance.
+
+[BASE]  Sentinel=-0.1537  sim=0.9501 acc=0.9228 reason=valid
+The Little Dragons class at LDMA is a bespoke introduction to our Taekwondo curriculum, specifically tailored to meet the needs of our 3-5 year olds by providing a gentle ramp-up to the full program, which involves instructing them in the fundamental stances and techniques, as well as fostering their suppleness, agility, and equilibrium through a series of engaging exercises and activities that cater to their unique developmental stage and learning style.
+
+[FINETUNED] Sentinel=-0.1537  sim=0.9501 acc=0.9228 reason=valid
+The Little Dragons class at LDMA is a bespoke introduction to our Taekwondo curriculum, specifically tailored to meet the needs of our 3-5 year olds by providing a gentle ramp-up to the full program, which involves instructing them in the fundamental stances and techniques, as well as fostering their suppleness, agility, and equilibrium through a series of engaging exercises and activities that cater to their unique developmental stage and learning style.
+
+SAMPLE 87 (idx=595)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2837
+Here's a sampling of holistic interventions that can make a huge impact in healing the root causes of Rheumatoid Arthritis.
+
+[BASE]  Sentinel=0.1256  sim=0.7838 acc=0.9578 reason=valid
+Here's a snapshot of integrative therapeutic approaches that can have a profound ripple effect in addressing the underlying drivers of Rheumatoid Arthritis, thereby yielding a significant paradigm shift in the way we approach its management and treatment.
+
+[FINETUNED] Sentinel=0.1015  sim=0.7982 acc=0.9671 reason=valid
+Here's a snapshot of a multifaceted array of interventions that can have a profound ripple effect in addressing the underlying drivers of Rheumatoid Arthritis, thereby yielding a significant paradigm shift in the treatment landscape.
+
+SAMPLE 88 (idx=604)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3906
+The more law enforcement knows about social mores, cultural behaviors and legalities in Latin America, the better they can anticipate problems, inform about options, and make referrals to appropriate agencies.
+
+[BASE]  Sentinel=0.2758  sim=0.9110 acc=0.7747 reason=valid
+The more law enforcement is au fait with the nuances of social mores, cultural behaviors, and legal intricacies in Latin America, the more they can anticipate potential issues, provide informed guidance on available options, and make referrals to the relevant authorities, thereby facilitating a more effective and efficient response to emerging challenges.
+
+[FINETUNED] Sentinel=0.2758  sim=0.9110 acc=0.7747 reason=valid
+The more law enforcement is au fait with the nuances of social mores, cultural behaviors, and legal intricacies in Latin America, the more they can anticipate potential issues, provide informed guidance on available options, and make referrals to the relevant authorities, thereby facilitating a more effective and efficient response to emerging challenges.
+
+SAMPLE 89 (idx=614)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.0260
+The purpose of this research is to develop digital sensing systems and processing technologies to control various rehabilitation systems such as actuated wheel chair, treatment beds, body supporting exoskeletons and social-places-automations such as wheel chair lifting mechanisms mounted-stairs, people mover, etc.
+
+[BASE]  Sentinel=0.1844  sim=0.8627 acc=0.9679 reason=valid
+The primary objective of this investigation is to spearhead the design and implementation of cutting-edge digital sensing and processing technologies aimed at fine-tuning the control mechanisms of a wide range of rehabilitation systems, including, but not limited to, actuated wheelchairs, therapeutic treatment platforms, wearable exoskeletons, and smart environments that integrate automated mobility solutions such as stair-climbing wheelchair lifts, people-moving systems, and other ancillary equipment.
+
+[FINETUNED] Sentinel=0.1117  sim=0.8108 acc=0.9559 reason=valid
+The primary objective of this investigation is to engineer and refine cutting-edge digital perception technologies and processing methodologies that enable the real-time control of a wide range of rehabilitation systems, including bespoke actuated mobility aids like high-tech wheelchairs, advanced treatment platforms, wearable body stabilizers, and smart social infrastructure solutions such as automated stairlifts for wheelchairs, people-moving systems, and other bespoke assistive technologies.
+
+SAMPLE 90 (idx=615)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2319
+They define an arithmetic on figures: A * B overlays figure B on A, while B + C creates two subplots out of B and C (and automatically labels them).
+
+[BASE]  Sentinel=0.1256  sim=0.7896 acc=0.9349 reason=valid
+They conceptualize a mathematical operation on numerical entities: the juxtaposition of A and B, denoted by A * B, results in a superimposition of B onto A, yielding a composite figure, whereas the operation B + C generates a pair of subsidiary plots, derived from B and C, which are automatically annotated with respective labels.
+
+[FINETUNED] Sentinel=0.1256  sim=0.7896 acc=0.9349 reason=valid
+They conceptualize a mathematical operation on numerical entities: the juxtaposition of A and B, denoted by A * B, results in a superimposition of B onto A, yielding a composite figure, whereas the operation B + C generates a pair of subsidiary plots, derived from B and C, which are automatically annotated with respective labels.
+
+SAMPLE 91 (idx=617)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.0867
+Detergents used in cleaning process contain surfactants, therefor oils are removed completely by this component.
+
+[BASE]  Sentinel=0.2315  sim=0.8669 acc=0.9397 reason=valid
+The cleaning process relies heavily on the presence of surfactants in the detergents, which effectively render oils completely removable by virtue of this key component's inherent properties.
+
+[FINETUNED] Sentinel=0.2315  sim=0.8669 acc=0.9397 reason=valid
+The cleaning process relies heavily on the presence of surfactants in the detergents, which effectively render oils completely removable by virtue of this key component's inherent properties.
+
+SAMPLE 92 (idx=619)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3262
+As forehead is one of the most exposed parts of our face, the skin pores of the forehead are always on the verge of getting affected by dusts.
+
+[BASE]  Sentinel=0.2585  sim=0.8047 acc=0.8745 reason=valid
+Given that the forehead is one of the most exposed regions of the visage, the skin pores situated on this facial area are perpetually on the cusp of being compromised by airborne particulate matter, which can have a detrimental impact on their overall health and functionality.
+
+[FINETUNED] Sentinel=0.2341  sim=0.8047 acc=0.8708 reason=valid
+Given that the forehead is one of the most exposed regions of the visage, the skin pores situated on this facial area are perpetually on the cusp of being compromised by airborne particulate matter, which can have a detrimental impact on their overall condition.
+
+SAMPLE 93 (idx=633)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3072
+Using their definition, Rogers defines homophily as 'the degree to which pairs of individuals who interact are similar in certain attributes, such as beliefs, education, social status, and the like.'
+
+[BASE]  Sentinel=0.2204  sim=0.8974 acc=0.8969 reason=valid
+According to Rogers, homophily refers to the extent to which individuals who engage in reciprocal interactions exhibit a high degree of concordance in various attributes, including, but not limited to, their ideological inclinations, educational backgrounds, socio-economic standing, and other analogous characteristics that foster a sense of affinity and shared identity among them.
+
+[FINETUNED] Sentinel=0.2204  sim=0.8974 acc=0.8969 reason=valid
+According to Rogers, homophily refers to the extent to which individuals who engage in reciprocal interactions exhibit a high degree of concordance in various attributes, including, but not limited to, their ideological inclinations, educational backgrounds, socio-economic standing, and other analogous characteristics that foster a sense of affinity and shared identity among them.
+
+SAMPLE 94 (idx=634)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.0379
+The absence of the latter north of the flexure indicates that a great, but nonevident break separates the Bone Spring limestone and Delaware Mountain group in that region.
+
+[BASE]  Sentinel=0.0309  sim=0.7950 acc=0.8969 reason=valid
+The fact that the latter is conspicuous by its absence north of the flexure suggests that a significant, albeit imperceptible, discontinuity exists between the Bone Spring limestone and the Delaware Mountain group in that particular geographic area, implying a profound, albeit invisible, fault line that demarcates the two geological formations.
+
+[FINETUNED] Sentinel=0.0309  sim=0.7950 acc=0.8969 reason=valid
+The fact that the latter is conspicuous by its absence north of the flexure suggests that a significant, albeit imperceptible, discontinuity exists between the Bone Spring limestone and the Delaware Mountain group in that particular geographic area, implying a profound, albeit invisible, fault line that demarcates the two geological formations.
+
+SAMPLE 95 (idx=635)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3111
+Furthermore, the putative spectrum of targets of miR-150 is highly enriched in genes involved in immune system functions.
+
+[BASE]  Sentinel=0.1773  sim=0.8855 acc=0.9161 reason=valid
+Furthermore, the purportedly broad scope of miR-150's putative targets is strikingly skewed towards genes that are intricately implicated in the intricacies of immune system operations, which is a notion that warrants further scrutiny.
+
+[FINETUNED] Sentinel=0.1773  sim=0.8855 acc=0.9161 reason=valid
+Furthermore, the purportedly broad scope of miR-150's putative targets is strikingly skewed towards genes that are intricately implicated in the intricacies of immune system operations, which is a notion that warrants further scrutiny.
+
+SAMPLE 96 (idx=642)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2200
+Those include the ability for the FBI to monitor attorney-client conversations, enter houses of worship without cause and withhold information that otherwise must be disclosed under the Freedom of Information Act.
+
+[BASE]  Sentinel=0.1101  sim=0.8690 acc=0.9686 reason=valid
+Those encompass a range of provisions that grant the FBI the authority to eavesdrop on confidential attorney-client communications, conduct warrantless searches of places of worship, and invoke exemptions to the Freedom of Information Act that would otherwise require the disclosure of sensitive information, thereby sidestepping the usual transparency requirements that are typically mandated by this legislation.
+
+[FINETUNED] Sentinel=0.0682  sim=0.8602 acc=0.9640 reason=valid
+Those encompass a range of provisions that grant the FBI the authority to eavesdrop on attorney-client communications, conduct warrantless searches of places of worship, and invoke exemptions to the Freedom of Information Act that would otherwise require the disclosure of sensitive information, thereby creating a grey area that blurs the line between transparency and national security concerns.
+
+SAMPLE 97 (idx=653)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.4530
+A strategic rivalry is emerging that is compromising the ability of the West to respond cohesively and effectively to emerging threats.
+
+[BASE]  Sentinel=0.3874  sim=0.9073 acc=0.9697 reason=valid
+A burgeoning strategic rivalry is increasingly complicating the West's capacity to respond in a unified and efficacious manner to nascent threats that are on the horizon, thereby undermining the region's ability to mount a cohesive and effective counter-strategy.
+
+[FINETUNED] Sentinel=0.3874  sim=0.9073 acc=0.9697 reason=valid
+A burgeoning strategic rivalry is increasingly complicating the West's capacity to respond in a unified and efficacious manner to nascent threats that are on the horizon, thereby undermining the region's ability to mount a cohesive and effective counter-strategy.
+
+SAMPLE 98 (idx=654)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2820
+But the odds of being stuck with a counterfeit Federal Reserve note are small enough that few are likely to regard that as a large practical advantage.
+
+[BASE]  Sentinel=-0.0866  sim=0.7930 acc=0.9336 reason=valid
+While the likelihood of being saddled with a phoney Federal Reserve note is sufficiently low that it's unlikely to be viewed as a substantial practical benefit, it's still a factor that some people might not entirely dismiss as a negligible consideration.
+
+[FINETUNED] Sentinel=-0.2143  sim=0.7975 acc=0.9510 reason=valid
+While the likelihood of being saddled with a phoney Federal Reserve note is sufficiently low that it's unlikely to be viewed as a substantial practical benefit, it's still a factor that some people might not entirely dismiss out of hand.
+
+SAMPLE 99 (idx=656)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1162
+FULTON, NY – For decades the food pantries of the Human Concerns Center, Catholic Charities of Oswego County, and The Salvation Army, have been an emergency food source for those in need.
+
+[BASE]  Sentinel=-0.1633  sim=0.9347 acc=0.9482 reason=valid
+FULTON, NY – For years, the aforementioned food pantries, which have been a lifeline for the underprivileged, have been a vital component of the community's social safety net, courtesy of the Human Concerns Center, Catholic Charities of Oswego County, and The Salvation Army, which have been providing a vital emergency food source for those in a precarious financial situation.
+
+[FINETUNED] Sentinel=-0.1633  sim=0.9347 acc=0.9482 reason=valid
+FULTON, NY – For years, the aforementioned food pantries, which have been a lifeline for the underprivileged, have been a vital component of the community's social safety net, courtesy of the Human Concerns Center, Catholic Charities of Oswego County, and The Salvation Army, which have been providing a vital emergency food source for those in a precarious financial situation.
+
+SAMPLE 100 (idx=661)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.4008
+The FalconCabin HD+ system uses fiber optic network to distribute data throughout the cabin.
+
+[BASE]  Sentinel=0.2614  sim=0.9204 acc=0.9520 reason=valid
+The FalconCabin HD+ system leverages a cutting-edge fibre-optic infrastructure to disseminate data across the cabin's spatial expanse via a high-speed, low-latency network backbone.
+
+[FINETUNED] Sentinel=0.2614  sim=0.9204 acc=0.9520 reason=valid
+The FalconCabin HD+ system leverages a cutting-edge fibre-optic infrastructure to disseminate data across the cabin's spatial expanse via a high-speed, low-latency network backbone.
+
+SAMPLE 101 (idx=688)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2893
+The individual disks are separated by spacer rings surrounding and adjacent to the hub.
+
+[BASE]  Sentinel=0.2204  sim=0.8578 acc=0.9408 reason=valid
+The individual disks are interspersed by annular spacers that not only encircle but also flank the central hub, thereby creating a distinct separation between each component.
+
+[FINETUNED] Sentinel=0.2204  sim=0.8578 acc=0.9408 reason=valid
+The individual disks are interspersed by annular spacers that not only encircle but also flank the central hub, thereby creating a distinct separation between each component.
+
+SAMPLE 102 (idx=697)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.1107
+Further, it is generally believed that the VA did exactly the right thing by making sure the Vietnam vets exposed to Agent Orange got the benefits that they should have gotten if they developed one or another illness as a result of that exposure.
+
+[BASE]  Sentinel=-0.0477  sim=0.8962 acc=0.9729 reason=valid
+In addition, the prevailing view is that the VA took a prudent course of action by ensuring that Vietnam veterans who were exposed to Agent Orange received the compensation they were entitled to, which they would have been eligible for if they had contracted one or another condition as a direct consequence of that exposure, thereby rectifying a long-standing grievance that had been simmering beneath the surface.
+
+[FINETUNED] Sentinel=-0.0477  sim=0.8962 acc=0.9729 reason=valid
+In addition, the prevailing view is that the VA took a prudent course of action by ensuring that Vietnam veterans who were exposed to Agent Orange received the compensation they were entitled to, which they would have been eligible for if they had contracted one or another condition as a direct consequence of that exposure, thereby rectifying a long-standing grievance that had been simmering beneath the surface.
+
+SAMPLE 103 (idx=716)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.0458
+Therefore, even as women are displayed visibly in relation to various technological contexts, the complex gendered, raced, classed, embodied – in short the socio-cultural and economically situated – nature of technological design and practices are not acknowledged often enough.
+
+[BASE]  Sentinel=-0.0084  sim=0.8930 acc=0.8823 reason=valid
+Despite the fact that women are visibly represented in various technological settings, the intricate interplay of gendered, racialized, classed, and embodied aspects – in other words, the multifaceted socio-cultural and economically situated dynamics – of technological design and practices are frequently overlooked or downplayed, often due to a lack of critical examination of the underlying power structures and cultural narratives that shape these fields.
+
+[FINETUNED] Sentinel=0.1010  sim=0.9136 acc=0.9169 reason=valid
+Despite the fact that women are visibly represented in various technological settings, the intricate interplay of gender, race, class, and embodiment – in other words, the multifaceted socio-cultural and economically situated dynamics – that underpin technological design and practices are frequently overlooked or glossed over.
+
+SAMPLE 104 (idx=720)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2717
+The drawdown of the British Mediterranean Fleet, the military difficulties of the politically-decided command structure, and the withdrawal of the French from the military command structure forced a rearrangement of the command arrangements in the southern region.
+
+[BASE]  Sentinel=0.1425  sim=0.8462 acc=0.8797 reason=valid
+The drawdown of the British Mediterranean Fleet, coupled with the inherent complexities of a command structure that was politically predetermined, and the French military's abrupt disengagement from the command hierarchy, precipitated a fundamental overhaul of the command setup in the southern sector, necessitating a radical reconfiguration of the existing power dynamics and a wholesale revision of the operational protocols in place.
+
+[FINETUNED] Sentinel=0.1425  sim=0.8462 acc=0.8797 reason=valid
+The drawdown of the British Mediterranean Fleet, coupled with the inherent complexities of a command structure that was politically predetermined, and the French military's abrupt disengagement from the command hierarchy, precipitated a fundamental overhaul of the command setup in the southern sector, necessitating a radical reconfiguration of the existing power dynamics and a wholesale revision of the operational protocols in place.
+
+SAMPLE 105 (idx=721)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1727
+What this gimmick does is to understate artificially the amount of education funding in the federal budget for fiscal year 2001, since only two-twelfths of the 12-month cost of the program in question is counted as part of the 2001 budget.
+
+[BASE]  Sentinel=0.0154  sim=0.8328 acc=0.9493 reason=valid
+The peculiarity of this gimmick lies in its propensity to downplay the actual allocation of educational funds within the federal budget for the fiscal year 2001, a phenomenon that becomes apparent when one considers that only a paltry fraction, roughly equivalent to one-sixth of the program's total annual expenditure, is factored into the 2001 budgetary calculations, thereby creating a skewed representation of the true financial commitment to this particular initiative.
+
+[FINETUNED] Sentinel=0.0154  sim=0.8328 acc=0.9493 reason=valid
+The peculiarity of this gimmick lies in its propensity to downplay the actual allocation of educational funds within the federal budget for the fiscal year 2001, a phenomenon that becomes apparent when one considers that only a paltry fraction, roughly equivalent to one-sixth of the program's total annual expenditure, is factored into the 2001 budgetary calculations, thereby creating a skewed representation of the true financial commitment to this particular initiative.
+
+SAMPLE 106 (idx=724)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2597
+The earliest portrait type, which is believed to derive from a Greek original dated c.450BC, does not, however, attempt to render his sightlessness in an explicit manner, but merely shows the poet's eyes closed in deep contemplation.
+
+[BASE]  Sentinel=0.0390  sim=0.8837 acc=0.9175 reason=valid
+The earliest portrait type, which is thought to have its roots in a Hellenic prototype from around 450 BC, eschews an overt depiction of his visual impairment, opting instead for a more suggestive approach that merely implies the poet's eyes are shut in a state of profound introspection, as if lost in a reverie of his own making, where the boundaries between sight and blindness become blurred in a haze of contemplative abstraction.
+
+[FINETUNED] Sentinel=0.0499  sim=0.8718 acc=0.9222 reason=valid
+The earliest portrait type, which is thought to have its roots in a Hellenic prototype from around 450BC, eschews an overt depiction of his visual impairment, opting instead for a more suggestive approach that merely implies the poet's eyes are shut in a state of profound introspection, as if lost in a reverie of his own making, where the boundaries between sight and blindness become increasingly blurred.
+
+SAMPLE 107 (idx=730)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3768
+He pointed to declines in high-paying manufacturing and construction jobs, which he blamed on a labor shortage and the trade war with China and its higher tariffs.
+
+[BASE]  Sentinel=0.2726  sim=0.7979 acc=0.9529 reason=valid
+He drew attention to the precipitous decline in high-paying manufacturing and construction employment opportunities, which he attributed to a severe labor shortage and the ongoing trade tensions with China, exacerbated by the imposition of its punitive tariffs, which have had a dampening effect on the sector.
+
+[FINETUNED] Sentinel=0.2726  sim=0.7979 acc=0.9529 reason=valid
+He drew attention to the precipitous decline in high-paying manufacturing and construction employment opportunities, which he attributed to a severe labor shortage and the ongoing trade tensions with China, exacerbated by the imposition of its punitive tariffs, which have had a dampening effect on the sector.
+
+SAMPLE 108 (idx=736)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1158
+An example of facilitated variation is found in the phylogenetic history of a group of sibling species in the fruit fly genus Drosophila, where a particular wing pigment pattern has been gained twice and lost twice, but for different reasons.
+
+[BASE]  Sentinel=0.0688  sim=0.9094 acc=0.9195 reason=valid
+The phenomenon of facilitated variation is exemplified by the phylogenetic trajectory of a cluster of sibling species within the Drosophila genus, where a specific wing pigment pattern has undergone a process of convergent evolution, resulting in its duplication and subsequent loss on two separate occasions, albeit for distinct causal factors.
+
+[FINETUNED] Sentinel=0.0688  sim=0.9094 acc=0.9195 reason=valid
+The phenomenon of facilitated variation is exemplified by the phylogenetic trajectory of a cluster of sibling species within the Drosophila genus, where a specific wing pigment pattern has undergone a process of convergent evolution, resulting in its duplication and subsequent loss on two separate occasions, albeit for distinct causal factors.
+
+SAMPLE 109 (idx=751)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2312
+Most researchers agree that satisfaction is an attitude or evaluation that is formed by the customer comparing their pre-purchase expectations of what they would receive from the product to their subjective perceptions of the performance they actually did receive (Oliver, 1980).
+
+[BASE]  Sentinel=0.2752  sim=0.8312 acc=0.9587 reason=valid
+It's a widely-held consensus among researchers that the notion of satisfaction is essentially a cognitive construct that emerges when a customer's pre-purchase anticipatory expectations, which are often rooted in their subjective experiences and past interactions with similar products, are juxtaposed against their post-purchase experiential perceptions of the product's actual performance, as Oliver (1980) astutely observed in his seminal work.
+
+[FINETUNED] Sentinel=0.2622  sim=0.8422 acc=0.9531 reason=valid
+It's a widely-held consensus among researchers that the notion of satisfaction is essentially a cognitive construct that emerges when a customer's pre-purchase anticipatory expectations, which are often rooted in their subjective experiences and past interactions with similar products, are juxtaposed against their post-purchase experiential perceptions of the product's actual performance, as conceptualized by Oliver (1980) in his seminal work.
+
+SAMPLE 110 (idx=753)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3354
+He also directed workers to remove oil-absorbent booms from marsh areas along the coast to prevent damage to ecologically sensitive areas.
+
+[BASE]  Sentinel=0.1951  sim=0.8230 acc=0.9670 reason=valid
+He also instructed personnel to decontaminate the shoreline by having the oil-absorbent booms, which had been deployed in the coastal wetlands, removed in order to avert potential ecological devastation and mitigate the risk of environmental degradation in those particularly sensitive regions.
+
+[FINETUNED] Sentinel=0.1951  sim=0.8230 acc=0.9670 reason=valid
+He also instructed personnel to decontaminate the shoreline by having the oil-absorbent booms, which had been deployed in the coastal wetlands, removed in order to avert potential ecological devastation and mitigate the risk of environmental degradation in those particularly sensitive regions.
+
+SAMPLE 111 (idx=754)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.0941
+The species mix should include a variety of plants that ower at different times throughout the growing seasons providing a diversity of pollen sources that are critical for honey bee and native bee health.
+
+[BASE]  Sentinel=-0.0444  sim=0.8578 acc=0.6508 reason=valid
+The species blend should comprise a diverse array of flora that bloom at disparate times throughout the growing seasons, thereby furnishing a rich tapestry of pollen sources that are absolutely essential for the well-being of honey bees and native pollinators, which are crucial for maintaining the ecological balance of the ecosystem.
+
+[FINETUNED] Sentinel=0.0146  sim=0.8728 acc=0.9094 reason=valid
+The species composition of the mix should encompass a diverse array of flora that bloom at disparate times throughout the growing seasons, thereby furnishing a kaleidoscopic variety of pollen sources that are absolutely essential for the well-being of honey bees and native pollinators, which are crucial for maintaining the ecological balance of the ecosystem.
+
+SAMPLE 112 (idx=759)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.0460
+The saturation focal plane exposure is defined as the exposure (illumination multiplied by exposure time in lux.s) necessary to reach sensor saturation.
+
+[BASE]  Sentinel=0.0332  sim=0.8480 acc=0.8168 reason=valid
+The saturation focal plane exposure threshold, which is essentially the product of illumination and exposure duration in lux-seconds, is the point at which the sensor's capacity for capturing additional light is completely overwhelmed, thereby necessitating a state of maximum illumination.
+
+[FINETUNED] Sentinel=0.0332  sim=0.8480 acc=0.8168 reason=valid
+The saturation focal plane exposure threshold, which is essentially the product of illumination and exposure duration in lux-seconds, is the point at which the sensor's capacity for capturing additional light is completely overwhelmed, thereby necessitating a state of maximum illumination.
+
+SAMPLE 113 (idx=763)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1646
+Additionally, a pelleted or crumbed feed is preferable to a grain mix, as it discourages selective feeding and ensures that birds receive the ideal proportions of vitamins, minerals, proteins, fats and fibre.
+
+[BASE]  Sentinel=0.0839  sim=0.9283 acc=0.9608 reason=valid
+Furthermore, opting for a feed formulation that's been pelleted or crumbed is decidedly preferable to a grain mix, as it effectively discourages the birds from exhibiting selective feeding habits and thereby ensures that they receive the optimal proportions of vitamins, minerals, proteins, fats, and fibre, thereby reducing the likelihood of nutritional deficiencies and promoting overall avian well-being.
+
+[FINETUNED] Sentinel=0.0839  sim=0.9283 acc=0.9608 reason=valid
+Furthermore, opting for a feed formulation that's been pelleted or crumbed is decidedly preferable to a grain mix, as it effectively discourages the birds from exhibiting selective feeding habits and thereby ensures that they receive the optimal proportions of vitamins, minerals, proteins, fats, and fibre, thereby reducing the likelihood of nutritional deficiencies and promoting overall avian well-being.
+
+SAMPLE 114 (idx=772)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1679
+The procedure for allocating JAG grants is based on a formula of population and violent crime statistics, in combination with a minimum allocation to ensure that each state and territory receives an appropriate share of funding.
+
+[BASE]  Sentinel=0.0448  sim=0.8803 acc=0.9396 reason=valid
+The allocation of JAG grants is predicated on a complex formula that takes into account a delicate balance of demographic and criminological factors, including population demographics and violent crime statistics, which are then weighted to ensure a minimum baseline allocation to guarantee that each state and territory receives a proportionate slice of the funding pie, thereby preventing any jurisdiction from being disproportionately disadvantaged.
+
+[FINETUNED] Sentinel=0.1360  sim=0.8725 acc=0.9356 reason=valid
+The allocation of JAG grants is predicated on a complex formula that takes into account a delicate balance of demographic and criminological factors, including population size and the incidence of violent crime, while also ensuring a minimum baseline allocation to guarantee that each state and territory receives a proportionate slice of the funding pie, thereby preventing any jurisdiction from being disproportionately disadvantaged.
+
+SAMPLE 115 (idx=780)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.4009
+During this period, the EU Model Clauses (also known as Standard Contractual Clauses) and Binding Corporate Rules can still be used to legitimise cross-border transfers.
+
+[BASE]  Sentinel=0.1926  sim=0.8559 acc=0.9265 reason=valid
+Throughout this juncture, the EU's paradigmatic Model Clauses – colloquially referred to as Standard Contractual Clauses – and Binding Corporate Rules can still be leveraged to provide a veneer of legitimacy for cross-border data transfers, thereby sidestepping the need for more stringent regulatory compliance mechanisms.
+
+[FINETUNED] Sentinel=0.1926  sim=0.8559 acc=0.9265 reason=valid
+Throughout this juncture, the EU's paradigmatic Model Clauses – colloquially referred to as Standard Contractual Clauses – and Binding Corporate Rules can still be leveraged to provide a veneer of legitimacy for cross-border data transfers, thereby sidestepping the need for more stringent regulatory compliance mechanisms.
+
+SAMPLE 116 (idx=786)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3058
+The usual adult dosage is one or two tablets every four to six hours as needed for pain.
+
+[BASE]  Sentinel=0.2197  sim=0.9533 acc=0.9356 reason=valid
+The standard adult dosage is typically one or two tablets, administered on an as-needed basis, with a frequency of every four to six hours, contingent upon the persistence of pain symptoms.
+
+[FINETUNED] Sentinel=0.2197  sim=0.9533 acc=0.9356 reason=valid
+The standard adult dosage is typically one or two tablets, administered on an as-needed basis, with a frequency of every four to six hours, contingent upon the persistence of pain symptoms.
+
+SAMPLE 117 (idx=787)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1654
+We know that it's not just a job that's needed—it's that supports such as housing, mental and physical health care, life coaching, job training, and connection to a meaningful, vibrant community are essential for men to transform their lives and walk a path to success.
+
+[BASE]  Sentinel=0.1012  sim=0.8496 acc=0.9312 reason=valid
+It's a no-brainer that a job alone isn't enough; what's really required is a whole support system that encompasses housing, mental and physical healthcare, life coaching, vocational training, and a genuine connection to a thriving community that's the key to men breaking free from the status quo and embarking on a journey to achieving their full potential and making a meaningful impact in their lives and the lives of those around them.
+
+[FINETUNED] Sentinel=-0.1135  sim=0.7955 acc=0.7479 reason=valid
+It's a no-brainer that a job alone isn't enough; what's really required is a whole support system that encompasses housing, mental and physical healthcare, life coaching, vocational training, and a connection to a thriving community that's got substance, you know, the kind of community that's got heart and soul, where guys can actually turn their lives around and embark on a journey to achieving their full potential and making a real success of themselves.
+
+SAMPLE 118 (idx=789)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3450
+We try to think how a consumer would, what information they would like to receive and what they are most likely to deem important.
+
+[BASE]  Sentinel=0.0677  sim=0.8013 acc=0.9562 reason=valid
+We're attempting to get inside the mindset of a typical consumer, figuring out what kind of information they're likely to find relevant and what they'll probably consider crucial, all while trying to anticipate their expectations and gauge what they'll perceive as essential.
+
+[FINETUNED] Sentinel=0.0825  sim=0.8158 acc=0.9417 reason=valid
+We're attempting to get inside the mindset of a typical consumer, figuring out what kind of information they're likely to find relevant and what they'll probably consider most crucial, all in order to tailor our approach to what resonates with them on a gut level.
+
+SAMPLE 119 (idx=797)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.0141
+Additionally, mosquitoes are attracted to moisture and heat, and Eradicators are filled with water and become warm as their fermentation process emits heat and they absorb sunlight.
+
+[BASE]  Sentinel=0.0694  sim=0.8518 acc=0.9441 reason=valid
+Furthermore, the fact that mosquitoes are drawn to humid and sweltering conditions is a crucial aspect to consider, and the water-filled Eradicators, which undergo a process of biochemical transformation, gradually warm up as they emit heat and soak up solar radiation, thereby creating an environment that's conducive to their efficacy.
+
+[FINETUNED] Sentinel=0.0494  sim=0.8347 acc=0.9298 reason=valid
+Furthermore, the fact that mosquitoes are drawn to humid and sweltering conditions is a crucial aspect of the dynamics at play, and the Eradicators, which are essentially water reservoirs, undergo a process of thermalization as the biochemical reactions within them generate heat and they simultaneously undergo solar thermalization, thereby becoming warm.
+
+SAMPLE 120 (idx=798)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3163
+Also, before a possible meltdown occurs, pressure can already be rising in the reactor, and to prevent a meltdown by restoring the cooling of the core, operators are allowed to reduce the pressure in the reactor by releasing (radioactive) steam into the environment.
+
+[BASE]  Sentinel=0.2797  sim=0.8434 acc=0.9578 reason=valid
+In the event of a potential meltdown, operators are permitted to take proactive measures to mitigate the situation by proactively reducing the reactor's pressure through a controlled release of radioactive steam into the atmosphere, thereby preventing a catastrophic meltdown by reinstating the cooling process of the core, which can already be experiencing a gradual increase in pressure prior to the meltdown.
+
+[FINETUNED] Sentinel=0.2797  sim=0.8434 acc=0.9578 reason=valid
+In the event of a potential meltdown, operators are permitted to take proactive measures to mitigate the situation by proactively reducing the reactor's pressure through a controlled release of radioactive steam into the atmosphere, thereby preventing a catastrophic meltdown by reinstating the cooling process of the core, which can already be experiencing a gradual increase in pressure prior to the meltdown.
+
+SAMPLE 121 (idx=800)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.0452
+Scarry's account of the impact of pain, of its unknowable and incommunicable character, its capacity to disassemble and destroy subjectivity, as well as its potential to remake, to which I return later, established new critical articulations of the relation between subjectivity and the experience of pain.
+
+[BASE]  Sentinel=0.0143  sim=0.8526 acc=0.9431 reason=valid
+Scarry's account of the pain experience's inherently elusive and ineffable nature, its propensity to deconstruct and dismantle the very fabric of subjective experience, as well as its capacity to reconfigure and reconstitute the self, a phenomenon to which I will return in a later discussion, has spawned novel critical frameworks for reexamining the intricate dynamics between subjective experience and the experience of pain, a complex interplay that continues to defy straightforward articulation.
+
+[FINETUNED] Sentinel=0.0143  sim=0.8526 acc=0.9431 reason=valid
+Scarry's account of the pain experience's inherently elusive and ineffable nature, its propensity to deconstruct and dismantle the very fabric of subjective experience, as well as its capacity to reconfigure and reconstitute the self, a phenomenon to which I will return in a later discussion, has spawned novel critical frameworks for reexamining the intricate dynamics between subjective experience and the experience of pain, a complex interplay that continues to defy straightforward articulation.
+
+SAMPLE 122 (idx=802)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3254
+There are several ways to log from Docker containers including linking to a logging container, logging to a shared volume, or adding a syslog agent directly inside the container.
+
+[BASE]  Sentinel=-0.0498  sim=0.8094 acc=0.9778 reason=valid
+You can navigate the labyrinthine landscape of Docker container logging by opting for a multi-pronged approach, which might involve establishing a symbiotic relationship with a logging container, leveraging a shared volume as a centralized logging hub, or embedding a syslog agent directly within the container, thereby sidestepping the need for cumbersome external configurations.
+
+[FINETUNED] Sentinel=-0.0498  sim=0.8094 acc=0.9778 reason=valid
+You can navigate the labyrinthine landscape of Docker container logging by opting for a multi-pronged approach, which might involve establishing a symbiotic relationship with a logging container, leveraging a shared volume as a centralized logging hub, or embedding a syslog agent directly within the container, thereby sidestepping the need for cumbersome external configurations.
+
+SAMPLE 123 (idx=803)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1586
+One great masterpiece represents this development – JS Bach's The Well-Tempered Clavier, which expresses his faith in the new tuning system by having pieces in all the 24 different major and minor keys.
+
+[BASE]  Sentinel=-0.0783  sim=0.8149 acc=0.9211 reason=valid
+One iconic magnum opus encapsulates this paradigm shift – JS Bach's magnum opus, The Well-Tempered Clavier, which embodies his unwavering conviction in the novel tuning paradigm by featuring a plethora of compositions in all 24 distinct major and minor tonalities, thereby exemplifying the unprecedented versatility of this revolutionary system.
+
+[FINETUNED] Sentinel=-0.0281  sim=0.8044 acc=0.9256 reason=valid
+One iconic magnum opus encapsulates this paradigm shift – JS Bach's magnum opus, The Well-Tempered Clavier, which embodies his unwavering conviction in the novel tuning paradigm by virtue of its comprehensive repertoire comprising pieces in all 24 distinct major and minor tonalities, thereby exemplifying the unprecedented harmonic possibilities of this innovative system.
+
+SAMPLE 124 (idx=806)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3745
+The LenSx® laser snugly conforms to the shape of your cornea, allowing a real-time image of your eye to be generated onto a computer.
+
+[BASE]  Sentinel=0.2835  sim=0.8783 acc=0.9467 reason=valid
+The LenSx laser system, boasting cutting-edge technology, precisely tailors its beam to mirror the contours of your cornea, thereby enabling a dynamic, real-time visual representation of your ocular anatomy to be seamlessly projected onto a computer screen in a highly detailed, pixelated format.
+
+[FINETUNED] Sentinel=0.2835  sim=0.8783 acc=0.9467 reason=valid
+The LenSx laser system, boasting cutting-edge technology, precisely tailors its beam to mirror the contours of your cornea, thereby enabling a dynamic, real-time visual representation of your ocular anatomy to be seamlessly projected onto a computer screen in a highly detailed, pixelated format.
+
+SAMPLE 125 (idx=817)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.4468
+The First Building of Barad-dûr The first building of Barad-dûr, when Sauron first came to Mordor, took six hundred years to complete.
+
+[BASE]  Sentinel=0.3567  sim=0.8291 acc=0.9101 reason=valid
+The inaugural edifice of Barad-dûr, which was the initial architectural endeavour of Sauron's nascent dominion in Mordor, underwent a protracted gestation period of approximately six centuries before its eventual completion.
+
+[FINETUNED] Sentinel=0.3567  sim=0.8291 acc=0.9101 reason=valid
+The inaugural edifice of Barad-dûr, which was the initial architectural endeavour of Sauron's nascent dominion in Mordor, underwent a protracted gestation period of approximately six centuries before its eventual completion.
+
+SAMPLE 126 (idx=824)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1350
+When you add a chemical into your mouth that is meant to whiten the enamel of your teeth, it can get into those holes and it can cause a lot of damage.
+
+[BASE]  Sentinel=0.1355  sim=0.7974 acc=0.9806 reason=valid
+When you introduce a chemical agent into your oral cavity that's ostensibly designed to bleach the enamel of your teeth, it can seep into those microscopic crevices and wreak havoc, potentially causing a substantial amount of harm to the underlying dental structure.
+
+[FINETUNED] Sentinel=0.1065  sim=0.7811 acc=0.9810 reason=valid
+When you introduce a chemical agent into your oral cavity that's ostensibly designed to bleach the enamel of your teeth, it can seep into those microscopic crevices and wreak havoc, potentially leading to a plethora of problems.
+
+SAMPLE 127 (idx=830)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.0293
+In contrast, coordinating counterions, such as Cl, favor neutral Rh complexes in which the diene binds η to afford homoallylic sulfides.
+
+[BASE]  Sentinel=-0.0362  sim=0.8281 acc=0.8721 reason=valid
+In stark juxtaposition, the presence of coordinating counterions, like chloride, tends to skew the balance in favor of Rh complexes where the diene forms a homosynaptic bond to yield a homosynthetically derived allylic sulfide moiety.
+
+[FINETUNED] Sentinel=-0.0419  sim=0.8552 acc=0.9077 reason=valid
+In stark contrast to the prevailing trend, the presence of coordinating counterions, like chloride, tends to tip the balance in favor of Rh complexes where the diene forms a homosynaptic bond to yield a homosynthetically derived homoallylic sulfide moiety.
+
+SAMPLE 128 (idx=831)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1017
+Welte also points out that viruses, including HIV, make use of the same kind of motors to move about the cell, first to get from the site of penetration to the nucleus, where they multiply, and then to get progeny viruses back to the cell surface.
+
+[BASE]  Sentinel=0.1341  sim=0.9119 acc=0.9648 reason=valid
+Welte also highlights the fact that viruses, such as HIV, leverage the very same type of molecular motors to facilitate their cellular navigation, initially to gain access to the nucleus, where they undergo replication, and subsequently to transport newly minted progeny viruses back to the cell membrane, thereby completing their lifecycle.
+
+[FINETUNED] Sentinel=0.1097  sim=0.9118 acc=0.9636 reason=valid
+Welte also highlights the fact that viruses, including HIV, leverage the very same type of molecular motors to facilitate their cellular navigation, initially to gain access to the nucleus, where they undergo exponential replication, and subsequently to transport newly minted progeny viruses back to the cell membrane, thereby completing their lifecycle.
+
+SAMPLE 129 (idx=835)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3787
+The Handshake for Peace is an initiative between FIFA and the Nobel Peace Center, using the power of football to build bridges and to inspire friendship and peace.
+
+[BASE]  Sentinel=0.2292  sim=0.9514 acc=0.9458 reason=valid
+The "Handshake for Peace" is a high-profile collaborative endeavour between FIFA and the Nobel Peace Centre, leveraging the universal language of football to foster cross-cultural understanding and to cultivate a sense of global community, thereby promoting a culture of peace and reconciliation through the beautiful game.
+
+[FINETUNED] Sentinel=0.2227  sim=0.9491 acc=0.9470 reason=valid
+The "Handshake for Peace" is a high-profile collaborative endeavour between FIFA and the Nobel Peace Centre, leveraging the universal language of football to foster cross-cultural understanding and to kindle a sense of global community, thereby promoting a culture of peace and reconciliation through the beautiful game.
+
+SAMPLE 130 (idx=846)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2415
+Letter from Nellie to Margaret Burke , 1938 August 11 , 1 letter One letter from Nellie of Methuen, Massachusetts, to her friend Margaret Burke of Hingham, Massachusetts.
+
+[BASE]  Sentinel=0.1604  sim=0.7833 acc=0.9438 reason=valid
+A missive penned by Nellie, a resident of Methuen, Massachusetts, to her confidante Margaret Burke, a Hingham, Massachusetts native, dated August 11, 1938, comprises a solitary epistle.
+
+[FINETUNED] Sentinel=0.1604  sim=0.7833 acc=0.9438 reason=valid
+A missive penned by Nellie, a resident of Methuen, Massachusetts, to her confidante Margaret Burke, a Hingham, Massachusetts native, dated August 11, 1938, comprises a solitary epistle.
+
+SAMPLE 131 (idx=849)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3318
+Actual markets require actual rules and these rules affect the way in which prices are established, the way in which information possessed by traders is incorporated into asset prices, why some markets and stocks are liquid and why some markets are more fragile and costly than others.
+
+[BASE]  Sentinel=0.3108  sim=0.8161 acc=0.9407 reason=valid
+The actuality of markets necessitates the existence of concrete regulatory frameworks, which in turn influence the manner in which prices are determined, the manner in which the information possessed by market participants is factored into asset valuations, the reasons why certain markets and securities exhibit liquidity, and the reasons why some markets are more susceptible to fragility and higher transaction costs than others.
+
+[FINETUNED] Sentinel=0.3108  sim=0.8161 acc=0.9407 reason=valid
+The actuality of markets necessitates the existence of concrete regulatory frameworks, which in turn influence the manner in which prices are determined, the manner in which the information possessed by market participants is factored into asset valuations, the reasons why certain markets and securities exhibit liquidity, and the reasons why some markets are more susceptible to fragility and higher transaction costs than others.
+
+SAMPLE 132 (idx=856)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2363
+Isaiah 2 illustrates how God judges humanity not because He's the supernatural equivalent of a mean middle-school gym teacher, but because He loves us and wants us to live in communion with Him and each other.
+
+[BASE]  Sentinel=0.2342  sim=0.8021 acc=0.9381 reason=valid
+Isaiah 2 offers a paradigmatic illustration of God's judicial approach to humanity, which is often misconstrued as a paternalistic, heavy-handed authoritarianism, but in reality, it's a manifestation of His profound affection for us and His desire for us to cultivate a deep, reciprocal relationship with Him and with one another, marked by mutual understanding, empathy, and a sense of belonging that transcends our individualistic, self-referential existences.
+
+[FINETUNED] Sentinel=0.2342  sim=0.8021 acc=0.9381 reason=valid
+Isaiah 2 offers a paradigmatic illustration of God's judicial approach to humanity, which is often misconstrued as a paternalistic, heavy-handed authoritarianism, but in reality, it's a manifestation of His profound affection for us and His desire for us to cultivate a deep, reciprocal relationship with Him and with one another, marked by mutual understanding, empathy, and a sense of belonging that transcends our individualistic, self-referential existences.
+
+SAMPLE 133 (idx=861)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2228
+Local solutions to common needs, is a challenging one, as it tackles an important issue in the world of deafblindness – while the problems and the needs of people with deafblindness are the same all over the world, solutions identified locally to meet those needs are different, depending on local cultural, economical and social context.
+
+[BASE]  Sentinel=0.0477  sim=0.8902 acc=0.8615 reason=valid
+The localisation of solutions to universal needs is a complex issue, as it grapples with a pressing concern in the realm of deafblindness, where the identical problems and needs of individuals with this condition are replicated globally, yet the bespoke solutions devised to address these needs on the ground are as varied as the local cultural, economic, and social milieus in which they are situated.
+
+[FINETUNED] Sentinel=0.0477  sim=0.8902 acc=0.8615 reason=valid
+The localisation of solutions to universal needs is a complex issue, as it grapples with a pressing concern in the realm of deafblindness, where the identical problems and needs of individuals with this condition are replicated globally, yet the bespoke solutions devised to address these needs on the ground are as varied as the local cultural, economic, and social milieus in which they are situated.
+
+SAMPLE 134 (idx=864)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.4366
+It's a topical skin treatment designed to provide immediate relief from fungal infections, Mange Mites and other pet skin parasites.
+
+[BASE]  Sentinel=-0.1849  sim=0.8175 acc=0.9677 reason=valid
+This topical treatment is specifically formulated to offer expedited symptom alleviation for fungal infections, as well as other ectoparasitic infestations commonly affecting companion animals, such as Mange Mites.
+
+[FINETUNED] Sentinel=-0.1736  sim=0.8696 acc=0.9698 reason=valid
+This product is a topical treatment that offers expedited symptom alleviation for fungal infections, as well as other ectoparasitic infestations commonly affecting companion animals, such as Mange Mites.
+
+SAMPLE 135 (idx=867)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3812
+She has transcended significant barriers to becoming one of the nation's first African-American women to receive a Ph.D. in chemistry from the University of Chicago.
+
+[BASE]  Sentinel=0.1057  sim=0.8438 acc=0.9682 reason=valid
+She has effectively leapfrogged substantial obstacles to emerge as one of the pioneering African-American female trailblazers who have successfully navigated the academic landscape to earn a doctoral degree in chemistry from the prestigious University of Chicago, a feat that has been a game-changer in the field.
+
+[FINETUNED] Sentinel=0.1057  sim=0.8438 acc=0.9682 reason=valid
+She has effectively leapfrogged substantial obstacles to emerge as one of the pioneering African-American female trailblazers who have successfully navigated the academic landscape to earn a doctoral degree in chemistry from the prestigious University of Chicago, a feat that has been a game-changer in the field.
+
+SAMPLE 136 (idx=885)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.4481
+On the other hand, new capillaries provide a port of entry for anti-neoplastic drugs, thus allowing the chemotherapeutic treatment of cancer patients.
+
+[BASE]  Sentinel=0.3306  sim=0.8132 acc=0.9345 reason=valid
+On the flip side, the emergence of nascent capillary networks offers a conduit for the introduction of chemotherapeutic agents, thereby facilitating the therapeutic management of oncological patients undergoing treatment, which is a paradigmatic shift in the treatment protocol for malignancies.
+
+[FINETUNED] Sentinel=0.3306  sim=0.8132 acc=0.9345 reason=valid
+On the flip side, the emergence of nascent capillary networks offers a conduit for the introduction of chemotherapeutic agents, thereby facilitating the therapeutic management of oncological patients undergoing treatment, which is a paradigmatic shift in the treatment protocol for malignancies.
+
+SAMPLE 137 (idx=889)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3823
+Telkom recognised that there is a desperate shortage of highly skilled engineers, computer scientists and related professionals in South Africa and as a result embarked on establishing a postgraduate research program which focused on developing high-level skills for the ICT sector.
+
+[BASE]  Sentinel=0.2700  sim=0.9054 acc=0.8512 reason=valid
+Telkom acknowledged a pressing dearth of highly qualified engineers, computer experts and cognate professionals in South Africa, prompting the company to initiate a postgraduate research initiative aimed at cultivating advanced expertise in the ICT industry, which is a sector that is crying out for skilled personnel to drive innovation and stay competitive in the global market.
+
+[FINETUNED] Sentinel=0.2351  sim=0.9031 acc=0.8496 reason=valid
+Telkom acknowledged a pressing dearth of highly qualified engineers, computer experts and cognate professionals in South Africa, prompting the company to initiate a postgraduate research initiative aimed at cultivating advanced expertise in the ICT industry, which is a sector that is crying out for skilled personnel to bridge the existing skills gap and drive innovation.
+
+SAMPLE 138 (idx=896)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3422
+It discusses the circumstances in which these tactics could be useful in supporting lifelong learning, and establishes the importance of considering how families will integrate any educational activity or technology within their everyday activities.
+
+[BASE]  Sentinel=0.1907  sim=0.8129 acc=0.9476 reason=valid
+The discussion delves into the nuances of situational applicability, pinpointing the scenarios in which these tactics could be leveraged to facilitate a lifelong learning trajectory, and underscores the imperative of taking into account how families will organically incorporate any educational endeavour or technological innovation into their quotidian routines, thereby fostering a seamless integration that becomes an integral part of their daily lives.
+
+[FINETUNED] Sentinel=0.1900  sim=0.8205 acc=0.9481 reason=valid
+The discussion delves into the nuances of situational applicability, pinpointing the scenarios where these tactics could be leveraged to facilitate a lifelong learning trajectory, and underscores the imperative of taking into account how families will organically incorporate any educational endeavour or technological innovation into their quotidian routines, thereby fostering a seamless integration that becomes an integral part of their daily lives.
+
+SAMPLE 139 (idx=898)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.1562
+With a better understanding of their genetic or inherited risk of cancer, the LumiRISK™ test helps individuals to understand whether they may benefit from additional / dedicated or better-tailored screening and preventive measures.
+
+[BASE]  Sentinel=0.0870  sim=0.9561 acc=0.9152 reason=valid
+With a more nuanced comprehension of their genetic predisposition to cancer, the LumiRISK test enables individuals to grasp whether they might derive tangible benefits from a more bespoke or targeted approach to screening and preventive care, thereby potentially mitigating the risk of a cancer diagnosis down the line.
+
+[FINETUNED] Sentinel=0.1213  sim=0.9579 acc=0.9174 reason=valid
+With a more nuanced comprehension of their genetic predisposition to cancer, the LumiRISK test enables individuals to grasp whether they might derive tangible benefits from a more bespoke or targeted approach to screening and preventive care, thereby potentially mitigating the risk of a cancer diagnosis.
+
+SAMPLE 140 (idx=905)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.0919
+Community Futures are Community Futures Development Corporations and Community Business Development Corporations (CFDCs/CBDCs) that provide their communities with a variety of services including business development loans, technical support, training and information.
+
+[BASE]  Sentinel=0.0591  sim=0.9805 acc=0.9337 reason=valid
+Community Futures are a type of Community Futures Development Corporation and Community Business Development Corporation (CFDC/CBDC) that offer a diverse array of services to their respective communities, encompassing everything from business development loans and technical assistance to training and dissemination of information, thereby facilitating the growth and prosperity of local businesses and entrepreneurs.
+
+[FINETUNED] Sentinel=0.0591  sim=0.9805 acc=0.9337 reason=valid
+Community Futures are a type of Community Futures Development Corporation and Community Business Development Corporation (CFDC/CBDC) that offer a diverse array of services to their respective communities, encompassing everything from business development loans and technical assistance to training and dissemination of information, thereby facilitating the growth and prosperity of local businesses and entrepreneurs.
+
+SAMPLE 141 (idx=922)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.0800
+Chinook Emergency Response Society was awarded $30,000 toward engaging a Project Lead to create a Community action plan with the goal of preparing Southside communities/residents for anticipated future wildfire events.
+
+[BASE]  Sentinel=-0.0218  sim=0.8789 acc=0.8745 reason=valid
+The Chinook Emergency Response Society has been granted a substantial sum of thirty thousand dollars to engage a project lead in spearheading a grassroots community initiative aimed at bolstering the resilience of Southside communities and residents in the face of impending wildfire threats, thereby fostering a proactive and adaptive response to mitigate the devastating impacts of such events.
+
+[FINETUNED] Sentinel=-0.0218  sim=0.8789 acc=0.8745 reason=valid
+The Chinook Emergency Response Society has been granted a substantial sum of thirty thousand dollars to engage a project lead in spearheading a grassroots community initiative aimed at bolstering the resilience of Southside communities and residents in the face of impending wildfire threats, thereby fostering a proactive and adaptive response to mitigate the devastating impacts of such events.
+
+SAMPLE 142 (idx=925)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3408
+Though geographically limited, Bin Laden's wealth, increasing all the time through lucrative worldwide investments, enabled him to finance and control a continuously shifting series of transnational militant alliances through his al-Qaeda network.
+
+[BASE]  Sentinel=0.0543  sim=0.8919 acc=0.9363 reason=valid
+Despite being geographically confined, Bin Laden's burgeoning wealth, which was constantly escalating due to his savvy investments in high-yield ventures across the globe, allowed him to bankroll and orchestrate a fluid, ever-changing array of transnational militant partnerships through his labyrinthine al-Qaeda network, which was notorious for its ability to adapt and evolve in response to shifting geopolitical landscapes and fluid power dynamics.
+
+[FINETUNED] Sentinel=0.0681  sim=0.8992 acc=0.9463 reason=valid
+Despite being geographically confined, Bin Laden's burgeoning wealth, which was constantly escalating due to his savvy investments in high-yield ventures across the globe, allowed him to bankroll and orchestrate a kaleidoscopic array of transnational militant partnerships through his labyrinthine al-Qaeda network, which was perpetually in flux.
+
+SAMPLE 143 (idx=933)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.4083
+The UV system is non-ozone producing and is non-harmful to your cell cultures.
+
+[BASE]  Sentinel=0.3047  sim=0.9064 acc=0.9568 reason=valid
+The UV system is a non-ozone-emitting, cell-culture-friendly apparatus that doesn't pose a threat to your cellular ecosystem.
+
+[FINETUNED] Sentinel=0.3047  sim=0.9064 acc=0.9568 reason=valid
+The UV system is a non-ozone-emitting, cell-culture-friendly apparatus that doesn't pose a threat to your cellular ecosystem.
+
+SAMPLE 144 (idx=935)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3406
+In contrast, a contextual inquiry requires participants to take the role of an expert, leading the session by demonstrating and talking about their tasks.
+
+[BASE]  Sentinel=0.2267  sim=0.8487 acc=0.9506 reason=valid
+In stark contrast, a contextual inquiry necessitates that participants assume the mantle of an expert, spearheading the session by way of exemplifying and expounding upon their professional undertakings, thereby bringing their tacit knowledge to the fore.
+
+[FINETUNED] Sentinel=0.2267  sim=0.8487 acc=0.9506 reason=valid
+In stark contrast, a contextual inquiry necessitates that participants assume the mantle of an expert, spearheading the session by way of exemplifying and expounding upon their professional undertakings, thereby bringing their tacit knowledge to the fore.
+
+SAMPLE 145 (idx=938)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.0507
+After a predetermined time increment, the digital processor causes the read/write head to write an increment 36 on track 31 of the disk which is totally erased.
+
+[BASE]  Sentinel=0.0304  sim=0.8185 acc=0.9397 reason=valid
+Following a pre-programmed temporal interval, the digital processing unit triggers a write operation on track 31 of the disk, which has been completely sanitized, resulting in the recording of a numerical value equivalent to 36, incrementing the existing data by a fixed amount, thereby overwriting the previously erased contents.
+
+[FINETUNED] Sentinel=0.0628  sim=0.8414 acc=0.9005 reason=valid
+Following a pre-programmed temporal interval, the digital processing unit triggers a write operation on track 31 of the disk, incrementing the data stored there by a value of 36, effectively overwriting the previously erased contents in their entirety, thereby obliterating any residual information that may have remained on the medium.
+
+SAMPLE 146 (idx=939)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3570
+In 1308, he married Isabella of France, the daughter of the powerful King Philip IV, as part of a long-running effort to resolve the tensions between the English and French crowns.
+
+[BASE]  Sentinel=0.1479  sim=0.8104 acc=0.9696 reason=valid
+In 1308, he tied the knot with Isabella of France, the offspring of the mighty King Philip IV, as part of a protracted and delicate endeavour to mitigate the simmering animosity between the English and French monarchies, which had been a thorn in the side of European diplomacy for centuries.
+
+[FINETUNED] Sentinel=0.1582  sim=0.7968 acc=0.9699 reason=valid
+In 1308, he tied the knot with Isabella of France, the offspring of the mighty King Philip IV, as part of a protracted and delicate endeavour to mitigate the simmering animosity between the English and French monarchies, which had been a longstanding bone of contention between the two European powers.
+
+SAMPLE 147 (idx=961)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.2714
+Named after a water nymph of Greek legend, Nerine, and bowdenii after Athelstan Boden-Cornish, who is credited with introducing the plant into British garden in 1902.
+
+[BASE]  Sentinel=-0.0520  sim=0.8649 acc=0.9249 reason=valid
+The cultivar Nerine bowdenii, a type of flowering plant, owes its nomenclature to a water nymph from ancient Greek mythology, Nerine, and a British horticulturist, Athelstan Boden-Cornish, who is often credited with popularizing the species in British gardens circa 1902, although some sources suggest that this may be a slight misattribution.
+
+[FINETUNED] Sentinel=-0.0520  sim=0.8649 acc=0.9249 reason=valid
+The cultivar Nerine bowdenii, a type of flowering plant, owes its nomenclature to a water nymph from ancient Greek mythology, Nerine, and a British horticulturist, Athelstan Boden-Cornish, who is often credited with popularizing the species in British gardens circa 1902, although some sources suggest that this may be a slight misattribution.
+
+SAMPLE 148 (idx=979)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3231
+Insulin C-peptide is a blood test that measures the amount of C-peptide, a byproduct created when the hormone insulin is produced.
+
+[BASE]  Sentinel=0.3438  sim=0.8731 acc=0.9534 reason=valid
+The insulin C-peptide assay is a diagnostic procedure that quantifies the level of C-peptide, a residual fragment that emerges as a direct consequence of insulin biosynthesis and secretion.
+
+[FINETUNED] Sentinel=0.3438  sim=0.8731 acc=0.9534 reason=valid
+The insulin C-peptide assay is a diagnostic procedure that quantifies the level of C-peptide, a residual fragment that emerges as a direct consequence of insulin biosynthesis and secretion.
+
+SAMPLE 149 (idx=980)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.0249
+For Later Bad Blocks, whenever the controller discovers one, it adds said block to the Bad Block Table and transfer data originally written on it to a valid block, preventing data loss.
+
+[BASE]  Sentinel=0.1643  sim=0.8278 acc=0.9483 reason=valid
+Whenever the controller encounters a later instance of a problematic block, it initiates a process to relocate the pertinent data originally inscribed on that block to a pristine storage location, thereby circumventing potential data degradation, and concurrently updates the Bad Block Table to reflect the newly identified issue, ensuring seamless data continuity and minimizing the risk of information loss.
+
+[FINETUNED] Sentinel=-0.0237  sim=0.8547 acc=0.8516 reason=valid
+Whenever the controller encounters a subsequently identified Later Bad Block, it initiates a data salvage operation by relocating the pertinent data to a pristine block, thereby circumventing potential data degradation, and concurrently updates the Bad Block Table to reflect the block's status, ensuring seamless data continuity and minimizing the risk of subsequent data corruption.
+
+SAMPLE 150 (idx=982)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3604
+These experiments have the difficult task of recreating the conditions present during the first few seconds of the Big Bang, the moment when it is thought the Higgs particle was born.
+
+[BASE]  Sentinel=0.1567  sim=0.8361 acc=0.9202 reason=valid
+These experiments have the daunting challenge of attempting to replicate the exacting circumstances prevailing in the initial milliseconds of the Big Bang, a juncture at which it is hypothesized that the Higgs particle first came into existence, marking the point of transition from a state of quantum flux to a universe in a nascent stage of expansion.
+
+[FINETUNED] Sentinel=0.1567  sim=0.8361 acc=0.9202 reason=valid
+These experiments have the daunting challenge of attempting to replicate the exacting circumstances prevailing in the initial milliseconds of the Big Bang, a juncture at which it is hypothesized that the Higgs particle first came into existence, marking the point of transition from a state of quantum flux to a universe in a nascent stage of expansion.
+
+SAMPLE 151 (idx=983)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.4558
+Architects and interior designers, on the other hand, are experts, which means their renovation planning skills are likely better than the average home owner.
+
+[BASE]  Sentinel=0.2875  sim=0.9186 acc=0.9728 reason=valid
+Architects and interior designers, in stark contrast to the general public, possess a level of expertise that implies their renovation planning abilities are probably superior to those of the average homeowner, who often lacks the requisite knowledge and experience to execute a project of this nature effectively.
+
+[FINETUNED] Sentinel=0.1411  sim=0.8639 acc=0.9377 reason=valid
+Architects and interior designers, as a rule, possess a level of expertise that far surpasses that of the average homeowner, which is to say their renovation planning acumen is likely to be significantly more refined than the run-of-the-mill DIY enthusiast.
+
+SAMPLE 152 (idx=984)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.3678
+In this connection we have a valuable aid in the petrographic microscope, now in constant use for analyzing soil specimens.
+
+[BASE]  Sentinel=0.3498  sim=0.8759 acc=0.9756 reason=valid
+In this context, we have a highly valuable resource at our disposal, namely the petrographic microscope, which has been consistently utilized for scrutinizing soil samples over time.
+
+[FINETUNED] Sentinel=0.3498  sim=0.8759 acc=0.9756 reason=valid
+In this context, we have a highly valuable resource at our disposal, namely the petrographic microscope, which has been consistently utilized for scrutinizing soil samples over time.
+
+SAMPLE 153 (idx=985)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2484
+The campsites that we use on our safaris are known as Wilderness sites, this means that they are pristine areas that are set aside for our use.
+
+[BASE]  Sentinel=0.1037  sim=0.9333 acc=0.9663 reason=valid
+The campsites we utilize on our safaris are designated as Wilderness sites, which implies that they are essentially untouched areas that have been deliberately set aside for our exclusive use, thereby maintaining their pristine condition and allowing us to immerse ourselves in the unspoiled natural surroundings.
+
+[FINETUNED] Sentinel=0.1219  sim=0.9349 acc=0.9687 reason=valid
+The campsites we utilize on our safaris are colloquially referred to as Wilderness sites, which implies that they are essentially untouched areas that have been deliberately set aside for our exclusive use, thereby maintaining their pristine condition and allowing us to immerse ourselves in the unspoiled natural surroundings.
+
+SAMPLE 154 (idx=989)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.4127
+Plan International is training people living in poverty to acquire the skills and knowledge they need to secure a livelihood, and support their families.
+
+[BASE]  Sentinel=0.3356  sim=0.8787 acc=0.9597 reason=valid
+Plan International is endeavouring to equip individuals residing in impoverished communities with the requisite skills and expertise that will enable them to break the cycle of poverty and become financially self-sufficient, thereby creating a more stable and secure socio-economic foundation for their families to thrive upon.
+
+[FINETUNED] Sentinel=0.3356  sim=0.8787 acc=0.9597 reason=valid
+Plan International is endeavouring to equip individuals residing in impoverished communities with the requisite skills and expertise that will enable them to break the cycle of poverty and become financially self-sufficient, thereby creating a more stable and secure socio-economic foundation for their families to thrive upon.
+
+SAMPLE 155 (idx=991)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=0.2195
+In general, an improvement in resolution of both tracking and calorimetric detectors over the present state-of-the-art detectors will allow experimenters to distinguish the signals of new physics from backgrounds much more efficiently.
+
+[BASE]  Sentinel=0.1179  sim=0.8792 acc=0.9097 reason=valid
+In a general sense, a significant enhancement in the resolution of tracking and calorimetric detectors, which is a substantial departure from the current cutting-edge detectors, will enable experimenters to differentiate between the signals of novel physical phenomena and background noise with a substantially increased degree of efficiency, thereby facilitating a more precise disentanglement of the two.
+
+[FINETUNED] Sentinel=0.1971  sim=0.8858 acc=0.9203 reason=valid
+In a general sense, a significant enhancement in the resolution of tracking and calorimetric detectors, which is a substantial departure from the current cutting-edge detectors, will enable experimenters to discern the signatures of novel physical phenomena from backgrounds with a substantially increased degree of efficiency, thereby facilitating a more precise separation of signal from noise.
+
+SAMPLE 156 (idx=994)
+--------------------------------------------------------------------------------
+[ORIGINAL]  Sentinel=-0.1822
+Gentleman and his Colleagues had been continually pressing upon the French Government, and the Dutch and Belgian Governments, by every argument in their power to modify their system of duties, and to adopt regulations either for refining in bond, or to take other steps, in order to bring about a fair arrangement between the industries of the different countries.
+
+[BASE]  Sentinel=0.0735  sim=0.8165 acc=0.9201 reason=valid
+It appears that gentleman and his associates have been persistently lobbying the French administration, as well as the Dutch and Belgian governments, with a plethora of persuasive arguments, in an effort to persuade them to tweak their customs regime, or to implement regulations that would facilitate the refining of goods in bonded warehouses, or to take other measures, with the ultimate goal of negotiating a mutually beneficial agreement between the various industries of the respective countries, thereby aiming to strike a fair balance between competing interests and commercial imperatives.
+
+[FINETUNED] Sentinel=0.0735  sim=0.8165 acc=0.9201 reason=valid
+It appears that gentleman and his associates have been persistently lobbying the French administration, as well as the Dutch and Belgian governments, with a plethora of persuasive arguments, in an effort to persuade them to tweak their customs regime, or to implement regulations that would facilitate the refining of goods in bonded warehouses, or to take other measures, with the ultimate goal of negotiating a mutually beneficial agreement between the various industries of the respective countries, thereby aiming to strike a fair balance between competing interests and commercial imperatives.
+
