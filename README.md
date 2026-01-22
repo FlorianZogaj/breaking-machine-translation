@@ -36,4 +36,4 @@ To evaluate the fine-tuned model against the base model using the Sentinel metri
 python src/eval_grpo_harder_translate.py
 ```
 
-Ensure you point the script to the correct checkpoint path (default: `grpo_harder_translate_lora/checkpoint-5000`).
+You can either train a model and then ensure to point the evaluation script to the correct checkpoint path, or you can use our checkpoint from HuggingFace ``matafix/mtbreaker-5000`` (current default). 
