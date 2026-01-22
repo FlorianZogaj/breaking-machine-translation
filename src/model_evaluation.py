@@ -276,11 +276,11 @@ def parse_args():
     p = argparse.ArgumentParser()
     p.add_argument("--dataset", type=str, default="matafix/english-sentences-with-sentinel")
     p.add_argument("--split", type=str, default="train")
-    p.add_argument("--num_samples", type=int, default=10)
+    p.add_argument("--num_samples", type=int, default=1000)
     p.add_argument("--seed", type=int, default=43)
 
     p.add_argument("--base_model", type=str, default="meta-llama/Meta-Llama-3.1-8B-Instruct")
-    p.add_argument("--finetuned_path", type=str, default="grpo_harder_translate_lora/checkpoint-5000")
+    p.add_argument("--finetuned_path", type=str, default="matafix/mtbreaker-5000")
 
     p.add_argument("--device", type=str, default="cuda")
     p.add_argument("--load_in_4bit", action="store_true", default=True)
