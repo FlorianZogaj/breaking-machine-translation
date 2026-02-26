@@ -3,9 +3,9 @@
 
 This project explores adversarial rewriting for machine translation (MT) using reinforcement learning. Given an English sentence, we fine-tune a LLM to generate a rewrite that is intentionally harder for MT systems to translate.
 
-We fine-tune Llama-3.1-8B-Instruct with Group Relative Policy Optimization (GRPO) and LoRA, optimizing a learned translation-difficulty estimator ([Sentinel](https://huggingface.co/Prosho/sentinel-src-25)) while enforcing constraints on grammaticality, semantic similarity and length. The model learns to increase translation difficulty without resorting to degenerate strategies such as gibberish or excessive length.
+We fine-tune Llama-3.1-8B-Instruct with Group Relative Policy Optimization (GRPO) and LoRA, optimizing a translation-difficulty estimator ([Sentinel](https://huggingface.co/Prosho/sentinel-src-25)) while enforcing constraints on grammaticality, semantic similarity and length. The model learns to increase translation difficulty without resorting to degenerate strategies such as gibberish or excessive length.
 
-Further details about the methodology, experiments, reward design and analysis can be found in our full report: [Breaking-MT (PDF)](report_breaking-MT.pdf)
+**Report:** Further details about the methodology, experiments, reward design and analysis can be found in our full report: [Breaking-MT (PDF)](report_breaking-MT.pdf)
 
 ### Setup
 
